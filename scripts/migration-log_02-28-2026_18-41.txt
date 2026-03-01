@@ -1,0 +1,8 @@
+[2026-02-28 18:41:24] [INFO] Starting migration...
+[2026-02-28 18:41:24] [INFO] SUCCESS: Incorrect-Shells-Placement_02-28-2026.md copied
+[2026-02-28 18:41:24] [INFO] 
+[2026-02-28 18:41:24] [INFO] Migrated : 1 file(s)
+[2026-02-28 18:41:24] [INFO] Not Found: 0 file(s)
+[2026-02-28 18:41:24] [INFO]   [OK] Incorrect-Shells-Placement_02-28-2026.md
+[2026-02-28 18:41:24] [INFO] Log saved to: C:\repos\projects\ai-collaboration-governance\scripts\migration-log_02-28-2026_18-41.txt
+[2026-02-28 18:41:28] [INFO] Originals NOT deleted - verify then delete manually
