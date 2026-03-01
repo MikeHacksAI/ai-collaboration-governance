@@ -60,6 +60,7 @@ all    pushes to both azure and github simultaneously
 | 004 | drift-log/NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md | Copilot failed NAS setup guidance |
 | 005 | drift-log/Incorrect AI Assumptions - Google Drive.md | AI made incorrect Google Drive assumptions |
 | 006 | drift-log/Set-Content-Handoff-Failure_02-28-2026.md | Copilot here-string failed to write handoff file three times |
+| 007 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md | Copilot assumed NAS backup target was OpenDrive; actual service was Google Drive |
 
 ---
 

@@ -3,6 +3,68 @@
 ## Brand Mission
 MikeHacksAI exists to document, audit, and expose AI discrepancies, ensuring governance-grade transparency and user control in all automation and collaborative workflows. This is not an isolated incident report — it is an ongoing audit record spanning months of documented AI behavior across dozens of conversation topics.
 
+This work directly demonstrates the skills most in demand for AI training, evaluation, and oversight roles: the ability to identify when an AI is wrong, document it precisely, reproduce the conditions, correct the record, and prevent recurrence.
+
+---
+
+## Brand Assets (Launched March 2026)
+
+| Asset | Status |
+|-------|--------|
+| Domain | **mikehacks.ai** — secured |
+| GitHub | **github.com/MikeHacksAI** — active, this repo live *(private — publishing pending)* |
+| YouTube | **MikeHacksAI** channel — created, content pending |
+| LinkedIn | Update in progress |
+| Upwork | Proposals in progress |
+
+The MikeHacksAI brand was deliberately chosen and launched this week (March 2026) as the public-facing identity for AI governance, evaluation, and oversight work. The name reflects the core activity: systematically testing, breaking, and documenting AI behavior — not as a critic, but as a professional who makes AI systems safer and more reliable through rigorous real-world use.
+
+**Employment note:** Available for work as of March 2026. Last employed June 2024.
+
+---
+
+## Professional Value Proposition
+
+**What this repo proves about Mike Roehr as a collaborator and AI training asset:**
+
+### 1. Adversarial Testing Without Prompting
+Every incident in this repo was caught organically — during real work, not structured testing. Mike identified fabricated constraints, false causal chains, and evidence denial in real time, mid-session, without a test harness. This is the hardest kind of AI quality signal to capture and the most valuable for training data.
+
+### 2. Precision Error Documentation
+Each incident is documented with:
+- Verbatim AI quotes with source file and line number
+- The specific unverified assumption or fabricated detail
+- The user correction and AI response to that correction
+- Whether the AI acknowledged, doubled down, or silently reverted
+- Real-world impact (data loss risk, incorrect procedure, wrong software installed)
+
+This is the format RLHF (Reinforcement Learning from Human Feedback) and RLAIF pipelines require. Mike naturally produces it.
+
+### 3. Pattern Recognition Across Sessions
+The five recurring patterns documented here (Assumption-over-Evidence, Scope Inflation, Reversion After Correction, Invalid Root-Cause Diagnosis, Boundary Violation) were identified by Mike across 29+ distinct conversations spanning months — not extracted by a tool. This cross-session pattern recognition is exactly what red-teaming and alignment teams need from human evaluators.
+
+### 4. Evidence-Based Pushback
+In multiple documented cases, Mike disagreed with confident AI assertions and was correct. The most striking: Copilot warned 7+ times that 7.4TB of data could not be recovered from Google Drive. Mike initiated the restore anyway. The folder holding all 7.4TB was named `google-drive-mike` — the AI had the proof in front of it and still argued against it. Mike's judgment over the AI's was correct.
+
+### 5. AI-Agnostic Oversight
+This repo covers Microsoft Copilot, DeepSeek, and Claude across different use cases. The governance framework, drift logging process, and incident taxonomy Mike developed apply regardless of model or provider.
+
+---
+
+## Target Roles This Work Supports
+- AI Trainer / Human Feedback Specialist
+- AI Red Team / Adversarial Evaluator
+- Prompt Quality Analyst
+- AI Governance & Compliance Reviewer
+- RLHF Data Annotator (senior / policy-level)
+- AI Product QA / Trust & Safety
+- AI Consultant (Upwork / freelance)
+
+**Available for:** Full-time, contract, freelance, and Upwork engagements
+**Domain:** mikehacks.ai
+**GitHub:** https://github.com/MikeHacksAI/ai-collaboration-governance *(private — available upon request)*
+**Azure DevOps:** https://dev.azure.com/MikeHacksAI/ai-collaboration-governance *(private)*
+
 ---
 
 ## Scale of Documented Discrepancies
@@ -17,7 +79,7 @@ Data sourced from full Microsoft Copilot chat history export (`copilot-activity-
 | Distinct conversations containing admissions | **29** |
 | Softer admission/exoneration phrases (user cleared of fault) | **232** |
 | Date range | Nov 2025 – Feb 2026 |
-| Distinct documented drift events (detailed reconstruction) | **7** |
+| Distinct documented drift events (detailed reconstruction) | **8** |
 | Formal governance rules derived from incidents | See AI-Governance folder |
 
 Full admission catalog with timestamps: `Copilot-Drift-Admissions-Log.md`
@@ -30,7 +92,7 @@ Full CSV search output: `Microsoft/strong-admissions-results.txt` (51 strong), `
 The discrepancies documented here are not isolated mistakes — they are recurring behavioral patterns that appeared across 29+ distinct conversation topics spanning homelab infrastructure, Docker/Portainer, PowerShell scripting, cloud mounts, networking diagnostics, Raspberry Pi, NAS setup, password management, and more.
 
 ### Pattern 1 — Assumption-over-Evidence
-Copilot introduced facts, constraints, or environmental details that were never stated and often directly contradicted by the user's own evidence. Examples span NAS pool guidance, 5G hotspot fabrication, OpenDrive configuration assumptions, and network path fabrication.
+Copilot introduced facts, constraints, or environmental details that were never stated and often directly contradicted by the user's own evidence. Examples span NAS pool guidance, 5G hotspot fabrication, OpenDrive configuration assumptions, and network path fabrication. The most severe documented case: Copilot assumed the user's Google account was "over quota and stuck at 15 GB" and repeated this unverified claim **7+ times** as the basis for warning the user their 7.4TB cloudvault was not recoverable from Google Drive. When the user ran `du -sh /volume1/cloudvault/* | sort -h` and the output showed a folder named `google-drive-mike` containing 7.4TB — direct filesystem evidence that contradicted Copilot's claim — Copilot explicitly rejected the evidence: "Restricted Google accounts cannot download multi-TB datasets. So this 7.4 TB did not come from Google." The user never confirmed their quota state at any point. The user initiated a Google Drive restore against Copilot's guidance (2026-03-01).
 
 ### Pattern 2 — Scope Inflation (Intent-over-Literal Drift)
 Copilot expanded simple requests into full architecture proposals, governance-grade outputs, or multi-layered recommendations when the user asked for something minimal and literal. Appeared across scripting, README generation, Docker setup, and monitoring stack questions.
@@ -80,6 +142,18 @@ These incidents are documented in full detail in their source files. They repres
 - Root cause named by Copilot: "I expanded the scope based on past patterns instead of honoring the literal simplicity of your request."
 - Formal governance rules derived: AI-Governance/AI Governance Scope-Control & Drift Prevention.md
 - Full session documented in: Intent-over-literal-drift_02-28-2026.md
+
+### OpenDrive vs Google Drive — Incorrect Cloud Service Identity + Repeated False Recovery Warning (03-01-2026)
+- During NAS backup/rebuild planning, Copilot stated the user was "currently uploading 7 TB from the NAS to OpenDrive" and built the entire Step 12 post-rebuild restore procedure around installing OpenDrive Backup & Sync Manager. The actual backup target was **Google Drive**. OpenDrive was never part of the user's NAS setup.
+- Copilot then referenced Google Drive in Step 13 — creating an unresolved internal contradiction it never acknowledged.
+- **Repeated false warning (8 documented instances, 7 confirmed in exported files + 1 user-reported pending export):** Copilot asserted at least 7 times across two chat sessions that the 7.4TB cloudvault dataset was "not recoverable from Google Drive." In the most egregious instance, the user ran `du -sh /volume1/cloudvault/* | sort -h` and the output showed a folder literally named `google-drive-mike` holding 7.4TB — direct filesystem proof the data came from Google Drive. Copilot looked at that evidence and explicitly responded: "Restricted Google accounts cannot download multi-TB datasets. So this 7.4 TB did not come from Google." Additionally, Copilot reportedly introduced a "second type of Google account restriction" and warned the user's Gmail would stop working — not in any exported transcript, pending export. The user stated from the session's start that the account restriction predated the NAS purchase by over a month.
+- **Unverified root assumption:** Every warning traced back to a single claim Copilot introduced with no confirmation from the user: "Your Google account is over quota and stuck at 15 GB." The user never confirmed their storage tier, quota state, or that Google was blocking access.
+- **Demonstrably false block mechanism — ZIP exports:** Among the seven blocking mechanisms Copilot listed as confirmed fact, one was "Google blocks ZIP exports." This is factually incorrect. Google Takeout — Google's own data export service — produces ZIP archives by default. ZIP is the native export format Google itself uses. Copilot fabricated a block for a format Google actively provides.
+- **False causality — "forced to upload to OpenDrive":** Copilot stated: "This is exactly why you were forced to upload the 7 TB to OpenDrive in the first place." The user did use the OpenDrive Backup & Sync Manager — but the reason was practical capacity: OpenDrive offers unlimited storage and no other 7TB+ drive was available. The user was not forced by Google blocking anything. Copilot constructed a causal chain between two fabricated premises and presented it as the definitive explanation.
+- When the user corrected Copilot's OpenDrive assumption, Copilot acknowledged the error but immediately repeated the same Google Drive recovery warning — doubling down on the false claim while apologizing for the side error.
+- The user explicitly disagreed and began a Google Drive restore against Copilot's guidance (2026-03-01). If the restore succeeds, all 6 instances are documented false assertions stated as fact.
+- Full drift log: drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md
+- Source chats: ai-chat-history/NAS-Backup-Before-Rebuild.md, drift-log/Incorrect AI Assumptions - Google Drive.md
 
 ### Repeated Correction Requirement (ongoing, all sessions)
 - Across all 29 conversations with documented admissions, user had to enforce canonical paths, correct fabricated environmental details, reject invalid diagnostics, and re-establish the same rules after Copilot reverted.

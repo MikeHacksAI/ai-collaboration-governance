@@ -1,5 +1,5 @@
 # Project Summary - AI Collaboration Governance
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-01
 **Owner:** Michael Roehr (MikeHacksAI)
 **Status:** Active
 
@@ -42,6 +42,7 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 005 | 2026-02-28 | drift-log/Incorrect AI Assumptions - Google Drive.md | AI made incorrect Google Drive assumptions | Logged |
 | 006 | 2026-02-28 | drift-log/Set-Content-Handoff-Failure_02-28-2026.md | Copilot failed to write handoff file three times | Logged |
 | 007 | 2026-02-28 | drift-log/## Chat Customization Diagnostics.md | AI chat customization diagnostics and drift notes | Logged |
+| 008 | 2026-03-01 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md | Copilot assumed Google Drive backup was OpenDrive; built restore procedure on wrong service | Logged |
 
 ---
 

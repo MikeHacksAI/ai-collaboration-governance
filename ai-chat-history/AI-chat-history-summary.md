@@ -13,6 +13,7 @@ This summary outlines recurring issues, communication drift, and repeated clarif
 - Path drift: AI assistants occasionally used incorrect or non-canonical paths, despite repeated corrections.
 - Documentation gaps: The user had to remind the AI to update all project tracking files (TODO.md, PROJECT_REQUEST_LOG.md, PROJECT_SUMMARY.md) after changes.
 - Script standards: The user emphasized including 'cd' commands, dry run options, and summary comments in all scripts, which sometimes required multiple reminders.
+- Service identity assumption: Copilot assumed the NAS cloud backup target was OpenDrive and built a full restore procedure around it. The actual service was Google Drive. The user never mentioned OpenDrive in this context. (See: drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md)
 
 ## Lessons Learned
 - Maintaining a persistent, up-to-date project summary and TODO list reduces confusion and prevents drift.

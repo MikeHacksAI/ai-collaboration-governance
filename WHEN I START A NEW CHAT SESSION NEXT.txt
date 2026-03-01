@@ -1,0 +1,8 @@
+When You Start A New Chat Session
+Tell the AI:
+
+Please read the following files before we begin:
+
+handoff/AI-Collaboration-Handoff_02-28-2026.md
+project-summary/PROJECT_SUMMARY.md
+governance/Mikes AI Collaboration Charter.md

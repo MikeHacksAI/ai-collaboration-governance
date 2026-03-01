@@ -1,7 +1,7 @@
 # Microsoft Copilot Chat History Summary
 
 ## Communication Patterns
-- The user frequently had to clarify requirements about Docker, OpenDrive, and canonical paths.
+- The user frequently had to clarify requirements about Docker, cloud storage, and canonical paths.
 - Copilot sometimes defaulted to generic advice or missed specific project constraints, requiring the user to restate instructions.
 - There were several instances where the user had to emphasize not to write to the E: drive and to keep all project files on the N: drive.
 
@@ -9,9 +9,11 @@
 - Path and folder drift: Copilot occasionally referenced or created folders outside the specified canonical structure.
 - Incomplete documentation: The user had to prompt Copilot to update all relevant project files after making changes.
 - Script requirements: The user reiterated the need for 'cd' commands, dry run options, and summary comments in scripts.
+- Service identity assumption: Copilot assumed the NAS cloud backup target was OpenDrive when the actual service was Google Drive. Built a full multi-step restore procedure around the wrong service without any basis in user input. (2026-03-01)
 
-## Example
-- In one session, the user had to repeat instructions about mounting OpenDrive and rclone remotes at specific locations multiple times before Copilot implemented them correctly.
+## Examples
+- In one session, the user had to repeat instructions about mounting rclone remotes at specific locations multiple times before Copilot implemented them correctly.
+- Copilot stated "you are currently uploading 7 TB from the NAS to OpenDrive" and wrote Step 12 of the NAS rebuild procedure around installing OpenDrive client software — the user's actual backup destination was Google Drive.
 
 ---
 
