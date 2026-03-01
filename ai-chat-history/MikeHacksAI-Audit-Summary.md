@@ -90,7 +90,7 @@ These incidents are documented in full detail in their source files. They repres
 ---
 
 ## Governance Practices
-- All project tracking files, scripts, and chat histories are archived in `N:\DockerContainers\project-helper-files\AI-chat-history-reports` or `project-helper-files` folder.
+- All project tracking files, scripts, and chat histories are archived in `C:\repos\projects\ai-collaboration-governance` and backed up to Azure DevOps and GitHub under MikeHacksAI.
 - Every incident, correction, and AI drift is documented for audit and improvement.
 - Formal governance rules derived from documented incidents: `AI-Governance/AI Governance Scope-Control & Drift Prevention.md`
 - Full catalog of Copilot explicit admissions with timestamps, matched phrases, and conversation context: `Copilot-Drift-Admissions-Log.md` (**54 total strong admissions across 29 conversations, Nov 2025–Feb 2026**)
@@ -99,3 +99,4 @@ These incidents are documented in full detail in their source files. They repres
 ---
 
 _This summary is designed for recruiter-facing transparency and to help train future AI assistants. Feel free to post on GitHub or share as part of your portfolio._
+
