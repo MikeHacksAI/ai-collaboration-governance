@@ -1,0 +1,85 @@
+[2026-02-28 19:08:10] [INFO] Created folder: C:\repos\projects\ai-collaboration-governance\incidents
+[2026-02-28 19:08:10] [INFO] Created folder: C:\repos\projects\ai-collaboration-governance\ai-chat-history
+[2026-02-28 19:08:10] [INFO] ════════════════════════════════════════════
+[2026-02-28 19:08:10] [INFO] Starting Final Migration
+[2026-02-28 19:08:10] [INFO] ════════════════════════════════════════════
+[2026-02-28 19:08:10] [INFO] --- Migrating drift-log files ---
+[2026-02-28 19:08:11] [INFO] COPIED: Incorrect AI Assumptions - Google Drive.md
+[2026-02-28 19:08:11] [INFO] COPIED: ## Chat Customization Diagnostics.md
+[2026-02-28 19:08:12] [INFO] COPIED: NAS-REBUILD-ASSUMPTIONS.02-27-2026.md
+[2026-02-28 19:08:12] [INFO] COPIED: NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md
+[2026-02-28 19:08:13] [INFO] COPIED: Intent-over-literal-drift_02-28-2026.md
+[2026-02-28 19:08:13] [INFO] --- Migrating governance files ---
+[2026-02-28 19:08:13] [WARN] NOT FOUND: Mike's AI Collaboration Charter.md - N:\DockerContainers\project-helper-files\Mike's AI Collaboration Charter.md
+[2026-02-28 19:08:13] [INFO] COPIED: MSAN-LinkedIn.md
+[2026-02-28 19:08:13] [INFO] COPIED: OneTastic-Troubleshooting.md
+[2026-02-28 19:08:14] [INFO] COPIED: AI-Governance
+[2026-02-28 19:08:14] [INFO] --- Migrating incident files ---
+[2026-02-28 19:08:17] [INFO] COPIED: Halted Deletion of Pi5 Files folder
+[2026-02-28 19:08:18] [INFO] COPIED: Incident Report - Filename Boundary Violation_02-25-2026.md
+[2026-02-28 19:08:18] [INFO] COPIED: Copilot - 3 attempts to overwrite renamed scripts.md
+[2026-02-28 19:08:18] [INFO] --- Migrating ai-chat-history files ---
+[2026-02-28 19:08:18] [INFO] COPIED: AI-chat-history-summary.md
+[2026-02-28 19:08:18] [INFO] COPIED: AI-chat-history-summary-deepseek.md
+[2026-02-28 19:08:19] [INFO] COPIED: AI-chat-history-summary-microsoft.md
+[2026-02-28 19:08:19] [INFO] COPIED: MikeHacksAI-Audit-Summary.md
+[2026-02-28 19:08:19] [INFO] COPIED: Copilot-Drift-Admissions-Log.md
+[2026-02-28 19:08:39] [INFO] COPIED: Deepseek
+[2026-02-28 19:08:41] [INFO] COPIED: LinkedIn Discount
+[2026-02-28 19:08:47] [INFO] COPIED: Microsoft
+[2026-02-28 19:08:47] [INFO] --- Deleting temp files ---
+[2026-02-28 19:08:47] [INFO] DELETED: tmpclaude-aced-cwd
+[2026-02-28 19:08:48] [INFO] DELETED: tmpclaude-e943-cwd
+[2026-02-28 19:08:48] [INFO] ════════════════════════════════════════════
+[2026-02-28 19:08:48] [INFO] Migration Complete
+[2026-02-28 19:08:48] [INFO] Copied : 19 item(s)
+[2026-02-28 19:08:48] [INFO] Skipped: 1 item(s)
+[2026-02-28 19:08:48] [INFO] ════════════════════════════════════════════
+[2026-02-28 19:08:48] [INFO] 
+[2026-02-28 19:08:48] [INFO] Verifying new repo structure...
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\.gitignore
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-collaboration-governance.code-workspace
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\README.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\AI-chat-history-summary-deepseek.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\AI-chat-history-summary-microsoft.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\AI-chat-history-summary.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Copilot-Drift-Admissions-Log.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\MikeHacksAI-Audit-Summary.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Deepseek\deepseek_data-2025-10-29\conversations.json
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Deepseek\deepseek_data-2025-10-29\user.json
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Deepseek\deepseek_data-2026-02-26\conversations.json
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Deepseek\deepseek_data-2026-02-26\user.json
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\LinkedIn Discount\LinkedIn-Discount-EmailSupport.pdf
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Microsoft\admissions-search-results.txt
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Microsoft\copilot-activity-history.csv
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Microsoft\copilot-chat-activity.csv
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Microsoft\copilot-in-Microsoft-365-apps-activity.csv
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Microsoft\strong-admissions-results.txt
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\ai-chat-history\Microsoft\windows-apps-copilot-activity-history.csv
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\drift-log\## Chat Customization Diagnostics.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\drift-log\Incorrect AI Assumptions - Google Drive.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\drift-log\Incorrect-Shells-Placement_02-28-2026.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\drift-log\Intent-over-literal-drift_02-28-2026.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\drift-log\NAS-REBUILD-ASSUMPTIONS.02-27-2026.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\drift-log\NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\governance\architectural-rules.md
+[2026-02-28 19:08:48] [INFO]   C:\repos\projects\ai-collaboration-governance\governance\MSAN-LinkedIn.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\governance\OneTastic-Troubleshooting.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\governance\AI-Governance\AI Governance Scope-Control & Drift Prevention.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\handoff\AI-Collaboration-Handoff_02-28-2026.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Copilot - 3 attempts to overwrite renamed scripts.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Incident Report - Filename Boundary Violation_02-25-2026.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Halted Deletion of Pi5 Files\2026-02-27-incident.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Halted Deletion of Pi5 Files\Halted Deletion of Pi5 Files.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Halted Deletion of Pi5 Files\Screenshot 2026-02-27 032624.png
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Halted Deletion of Pi5 Files\Screenshot 2026-02-27 032858.png
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\incidents\Halted Deletion of Pi5 Files\Screenshot 2026-02-27 034548.png
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\project-summary\PROJECT_SUMMARY.md
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\scripts\create-foundation-files.ps1
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\scripts\final-migration-log_02-28-2026_19-08.txt
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\scripts\final-migration.ps1
+[2026-02-28 19:08:49] [INFO]   C:\repos\projects\ai-collaboration-governance\scripts\migration-log_02-28-2026_18-41.txt
+[2026-02-28 19:08:49] [INFO] 
+[2026-02-28 19:08:49] [INFO] IMPORTANT: Originals NOT deleted (except tmpclaude temp files)
+[2026-02-28 19:08:49] [INFO] Verify repo contents then manually delete originals from N:\
+[2026-02-28 19:08:49] [INFO] Log saved to: C:\repos\projects\ai-collaboration-governance\scripts\final-migration-log_02-28-2026_19-08.txt
