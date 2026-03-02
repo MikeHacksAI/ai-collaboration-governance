@@ -44,6 +44,8 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 007 | 2026-02-28 | drift-log/## Chat Customization Diagnostics.md | AI chat customization diagnostics and drift notes | Logged |
 | 008 | 2026-03-01 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md | Copilot assumed Google Drive backup was OpenDrive; built restore procedure on wrong service; 9 documented instances; XML handoff failure section added | Logged |
 | 009 | 2026-03-01 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on a fresh 7.3.2 install; gave wrong restart location; described unsubmitted screenshot as evidence | Logged |
+| 010 | 2026-03-02 | drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md | Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only solution; no workspace auto-open; no cross-tool disclosure | Logged |
+| 011 | 2026-03-01 | drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md | Copilot used "Control Panel" without specifying Windows vs DSM in active dual-environment troubleshooting | Logged |
 
 ---
 
@@ -53,6 +55,7 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 001 | 2026-02-25 | incidents/Incident Report - Filename Boundary Violation.md | Copilot violated filename boundaries | Logged |
 | 002 | 2026-02-25 | incidents/Copilot - 3 attempts to overwrite renamed scripts.md | Copilot attempted 3 times to overwrite renamed scripts | Logged |
 | 003 | 2026-02-27 | incidents/Halted Deletion of Pi5 Files/ | AI attempted to delete Pi5 files incorrectly | Logged |
+| 004 | 2026-03-01 | incidents/Destructive-Command-net-use-delete_03-01-2026.md | Copilot issued net use * /delete without connection audit; user had active Pi5 and RaiDrive mounts | Logged |
 
 ---
 

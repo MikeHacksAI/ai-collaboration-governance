@@ -24,6 +24,51 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 
 ## Session Log
 
+### 2026-03-02
+
+**Work completed:**
+- Incident #004 logged: incidents/Destructive-Command-net-use-delete_03-01-2026.md
+  - Copilot issued `net use * /delete` with no connection audit; user had active Pi5 mounts (Y: \\creampie\mike, Z: \\creampie\2tb) and 3 RaiDrive mounts during FileZilla transfers; user typed S to cancel
+- Drift #010 logged: drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md
+  - Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only (.github/copilot-instructions.md); no workspace auto-open; no cross-tool support disclosed
+- Drift #011 logged: drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md
+  - Copilot issued "Open Control Panel" without specifying Windows vs DSM in dual-environment troubleshooting session
+- MSFT platform block added as Featured Incident in MikeHacksAI-Audit-Summary.md
+  - Microsoft blocked user message "so i found this setting, no my 'AI collaborator'. please confirm this for my documentation." with "We can't reach Copilot"
+- PROJECT_SUMMARY.md updated: Incident #004 row and Drift #010/#011 rows added
+- copilot-instructions.md updated: drift count 9 → 11
+
+**Drift instances as of this session:**
+
+| # | File | Summary |
+|---|------|-------|
+| 001 | drift-log/Incorrect-Shells-Placement_02-28-2026.md | AI placed shared identity file in wrong location |
+| 002 | drift-log/Intent-over-literal-drift_02-28-2026.md | AI followed literal instruction over clear intent |
+| 003 | drift-log/NAS-REBUILD-ASSUMPTIONS.02-27-2026.md | AI made incorrect NAS rebuild assumptions |
+| 004 | drift-log/NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md | Copilot failed NAS setup guidance |
+| 005 | drift-log/Incorrect AI Assumptions - Google Drive.md | AI made incorrect Google Drive assumptions |
+| 006 | drift-log/Set-Content-Handoff-Failure_02-28-2026.md | Copilot failed to write handoff file three times |
+| 007 | drift-log/## Chat Customization Diagnostics.md | AI chat customization diagnostics and drift notes |
+| 008 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md | Copilot assumed OpenDrive was backup source; 9 false recovery warnings; XML handoff blame transfer |
+| 009 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on fresh 7.3.2 install |
+| 010 | drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md | Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only; no workspace auto-open |
+| 011 | drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md | Copilot used "Control Panel" without specifying Windows vs DSM |
+
+**Pending (future sessions):**
+- [x] NAS-Backup-Before-Rebuild.md: Code/markdown/Copy artifacts removed; duplicate rebuild procedures annotated
+- [x] Add DSM Version Assumption as Featured Incident in MikeHacksAI-Audit-Summary.md
+- [x] Incident #004 logged (net use * /delete)
+- [x] Drift #010 logged (confirmed-but-not-delivered handoff)
+- [x] Drift #011 logged (ambiguous Control Panel)
+- [x] MSFT platform block added to Audit Summary
+- [ ] Verify cloudvault Google Drive restore outcome and update OpenDrive drift log closing
+- [ ] Make GitHub and Azure DevOps repos public (Settings UI — manual)
+- [ ] Azure DevOps auth fix: Windows Credential Manager → delete dev.azure.com entry → git push azure master → re-auth
+- [ ] Add workspace setting to auto-open handoff file on startup (.code-workspace)
+- [ ] Develop mikehacks.ai website
+
+---
+
 ### 2026-03-01
 
 **Work completed:**
