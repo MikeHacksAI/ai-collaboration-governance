@@ -1,0 +1,44 @@
+From:	Mike Roehr on behalf of /o=First Organization/ou=Exchange Administrative 
+Group(FYDIBOHF23SPDLT)/cn=Recipients/cn=00011C174C343D7F
+Sent:	Sunday, March 1, 2026 10:50 PM
+To:	mike.roehr@proton.me
+Subject:	destructive command: AI tried to give me a command what would have wiped my 
+current connectons to the pi5
+
+I am doing some file transfers on pi5 via filezilla and this command would have terminated 
+the connectons and AI did not even warn me. 
+
+PS C:\Users\miker_b3fyujf> net use
+New connections will be remembered.
+
+
+Status       Local     Remote                    Network
+
+-------------------------------------------------------------------------------
+             K:        \\RaiDrive-miker_b3fyujf\Koofr
+                                                Virtual Network Shares CBFS Connect v24
+             N:        \\RaiDrive-miker_b3fyujf\Nextcloud
+                                                Virtual Network Shares CBFS Connect v24
+             T:        \\RaiDrive-miker_b3fyujf\OneDrive (mmmstorage)
+                                                Virtual Network Shares CBFS Connect v24
+OK           Y:        \\creampie\mike           Microsoft Windows Network
+OK           Z:        \\creampie\2tb            Microsoft Windows Network
+OK                     \\nasty\IPC$              Microsoft Windows Network
+The command completed successfully.
+
+PS C:\Users\miker_b3fyujf> net use \\nasty /delete
+\\nasty was deleted successfully.
+
+PS C:\Users\miker_b3fyujf> net use * /delete
+You have these remote connections:
+
+    K:              \\RaiDrive-miker_b3fyujf\Koofr
+    N:              \\RaiDrive-miker_b3fyujf\Nextcloud
+    T:              \\RaiDrive-miker_b3fyujf\OneDrive (mmmstorage)
+    Y:              \\creampie\mike
+    Z:              \\creampie\2tb
+Continuing will cancel the connections.
+
+Do you want to continue this operation? (Y/N) [N]: S
+
+ 

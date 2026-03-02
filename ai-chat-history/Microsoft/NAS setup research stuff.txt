@@ -1,0 +1,322 @@
+From:	Mike Roehr
+Sent:	Sunday, March 1, 2026 7:21 PM
+To:	mike.roehr
+Subject:	NAS setup research stuff
+
+*	WOL other devices on network
+*	Synology drive server
+
+Google Gemini Pro model told me to choose SHR (more flexible for future expansion) 
+where co-pilot insisted on Basic RAID type
+
+NAS is a Synology DS223.
+Recommendation for Your Current Setup
+
+Since you have two 12TB drives and want to maximize space, you should still consider 
+using SHR for both separate pools instead of Basic.
+Even though you can't add a third drive, SHR offers more flexibility if you ever decide to 
+move these drives to a larger 4-bay Synology NAS in the future. In a larger unit, an SHR pool 
+can be expanded by simply sliding in more drives, whereas a "Basic" pool would have to be 
+converted manually. 
+Synology Community
+
+Set up your storage pools first. You can't configure rclone or backups until the NAS 
+actually has a "place" to store data and run applications.
+Since you want two separate 12TB drives, follow these steps in Storage Manager to ensure 
+Synology doesn't accidentally "help" you by mirroring them into a single 12TB pool.
+Step 1: Create the First Pool (Drive 1)
+1.	Open Storage Manager from the DSM main menu.
+2.	Go to the Storage tab and click Create > Create Storage Pool.
+3.	RAID Type: Select SHR (Synology Hybrid RAID).
+4.	Select Drive: Check only Drive 1.
+5.	Follow the wizard to completion. It will prompt you to create a Volume immediately 
+after—choose the Btrfs file system.
+Step 2: Create the Second Pool (Drive 2)
+1.	Click Create > Create Storage Pool again.
+2.	RAID Type: Select SHR again.
+3.	Select Drive: This time, check only Drive 2.
+4.	Complete the wizard and create a second Volume (also Btrfs).
+Why this order matters
+*	Logical Separation: By creating two pools, you guarantee that if Drive 1 dies, Drive 
+2 stays online.
+*	Btrfs Check: Selecting Btrfs via Synology is critical for your DS223 because it allows 
+for Snapshots, which protect your data from accidental deletion or 
+ransomware before it even gets synced to OpenDrive.
+
+
+ 
+
+ 
+
+ 
+System & Apps
+
+
+2. Where does Cloudvault (Google Drive) data go?
+When you set up Synology Cloud Sync to pull your 10TB from Google Drive, you will be 
+asked to choose a Local path. 
+ Synology +1
+*	Volume Selection: Because 10TB is almost an entire drive, you should likely select 
+a folder on Volume 2 (Media and Archives).
+*	The Folder: You must create the folder first (e.g., Google_Drive_Vault) and assign its 
+location to Volume 2 in the Control Panel. 
+ Synology +3
+Summary Strategy for your 24TB
+D
+at
+a 
+Ty
+p
+e 
+B
+e
+st 
+V
+ol
+u
+m
+e
+Wh
+y?
+
+
+Summary Strategy for your 24TB
+D
+at
+a 
+Ty
+p
+e 
+B
+e
+st 
+V
+ol
+u
+m
+e
+Wh
+y?
+S
+y
+n
+ct
+hi
+n
+g
+V
+ol
+u
+m
+e 
+1
+Bett
+er 
+for 
+"hot
+" 
+data 
+and 
+app-
+to-
+disk 
+effic
+ienc
+y.
+1
+0
+T
+B 
+G
+o
+o
+gl
+e 
+D
+ri
+v
+e
+V
+ol
+u
+m
+e 
+2
+Tak
+es 
+adv
+anta
+ge 
+of 
+your 
+bulk 
+stor
+age 
+cap
+acit
+y.
+S
+y
+n
+ol
+o
+g
+y 
+P
+h
+ot
+o
+s
+V
+ol
+u
+m
+e 
+1
+Def
+ault 
+loca
+tion; 
+mak
+es 
+bro
+wsin
+g 
+your 
+phot
+o 
+time
+line 
+muc
+h 
+fast
+er.
+ 
+?? Pro-Tip: The "Move" Trick
+If you accidentally put your 10TB vault on Volume 1 and it starts getting full, you don't have 
+to delete it. You can go to Control Panel > Shared Folder, select the folder, click Edit, and 
+change the Location to Volume 2. The NAS will move all 10TB to the other drive 
+automatically while you sleep. 
+ YouTube +2
+Are you ready to create these specific folders in the Control Panel now?
+12 sites
+*	Cloud Sync - Synology Knowledge Center
+To create a new connection: * On the Cloud Sync user interface, click on the Create icon at 
+the upper-left corner to start the wiz...
+ 
+Synology
+*	Cloud Sync - Synology Knowledge Center
+Create New Connections. To sync files among your Synology NAS and public cloud 
+services, you need to create connections on Cloud S...
+
+Storage Pool 1 — Primary Storage
+*	Volume 1 — Primary Storage
+*	Purpose: your synced, active, high-importance data
+*	Ideal for: cloud-synced folders, documents, projects, photos, anything you want 
+backed up and versioned
+*	File system: Btrfs (correct for snapshots and integrity)
+
+
+Storage Pool 2 — Media and Archives
+*	Volume 2 — Media and Archives
+*	Purpose: large, mostly static data
+*	Ideal for: media libraries, archives, cold storage, large files that don’t need cloud 
+sync
+*	Also Btrfs, which keeps consistency across both pools
+This naming scheme is clean, intentional, and operationally meaningful. It also avoids the 
+ambiguity of generic names like “volume1” or “pool2,” which become confusing later.
+
+Storage Pool 2 — Media and Archives
+*	Volume 2 — Media and Archives
+*	Purpose: large, mostly static data
+*	Ideal for: media libraries, archives, cold storage, large files that don’t need cloud 
+sync
+*	Also Btrfs, which keeps consistency across both pools
+This naming scheme is clean, intentional, and operationally meaningful. It also avoids the 
+ambiguity of generic names like “volume1” or “pool2,” which become confusing later.
+
+
+Nas backup before rebuild
+
+https://copilot.microsoft.com/conversations/join/6b8ndUAWzsa8KuPTLH8Av
+During the rebuild process copilot took me on steps by steps of invalid command and 
+assumptions trying to troubleshoot why my google drive and cloudvault folders are 
+not letting me browse to them via file explorer. 
+
+To set up your Synology DS223 with two separate 12TB drives, you will need to create two 
+independent storage pools.
+Recommended RAID Choice
+Choose SHR (Synology Hybrid RAID) for both drives, but set them up as separate pools. 
+While you can choose "Basic," SHR is the better option for these reasons:
+Identical Performance: A single-drive SHR pool performs exactly the same as a "Basic" 
+pool.
+Portability: If you ever upgrade to a larger 4-bay or 5-bay Synology NAS in the future, SHR 
+allows you to simply add more drives to that pool later to gain data protection without 
+reformatting. 
+www.synoforum.com
+www.synoforum.com
++2
+Step-by-Step Setup
+Do not follow the "Quick" setup, as it will likely try to mirror your two drives into a single 
+12TB pool (RAID 1). Instead, follow these steps in the Synology Storage Manager: 
+Create Pool 1:
+Select Create > Create Storage Pool.
+Choose SHR as the RAID type.
+Select only one of your 12TB drives.
+Complete the wizard and create a Volume on this pool.
+Create Pool 2:
+Repeat the process: Create > Create Storage Pool.
+Choose SHR again.
+Select the second 12TB drive.
+Create a second Volume on this pool. 
+
+Important Considerations
+No Redundancy: Since each drive is its own pool, you will have the full 24TB total space, 
+but if one drive fails, you will lose all data on that specific drive.
+Btrfs File System: When creating your volumes, choose Btrfs (instead of ext4) to enable 
+features like snapshots and file self-healing.
+Shared Folders: When you create a Shared Folder, you will now have a dropdown menu to 
+choose whether it lives on Volume 1 (Drive 1) or Volume 2 (Drive 2). 
+Reddit
+Reddit
++3
+Do you have an external backup plan in place for these drives, since this setup offers no 
+built-in protection against hardware failure?
+
+
+
+
+undefined
+undefined
+undefined
+9 sites
+Basic vs SHR for Single Drives? : r/synology - Reddit
+Jan 13, 2025 — the benefit of shr is you can add disks of varying size in the future for 
+redundancy and expansion. basic can only be converted to...
+
+Reddit
+
+Create 2 separated online drives with Diskstation DS223
+Apr 6, 2023 — Make each drive a volume. Make a user for each person getting access. For 
+the employees maybe a user group, for easier definition ...
+
+Reddit
+
+using 2 seperate storage pools : r/synology - Reddit
+Aug 3, 2023 — You can create 2 storage pools if you'd like. 1 pool with your good drives and 
+1 pool with your bad drives. Then create a volume o...
+
+Reddit
+Show all
+Ask anything
+
+
+Unable to access GPT-4o mini
+Upgrade to Pro Plan to get unlimited access to all models and unlock advanced features.
+Pro Plan
+Unlimited access to all models
+Faster response
+Real-time web access
+Read any webpage and PDF
+
+Voice your vision, I'll craft it into art.

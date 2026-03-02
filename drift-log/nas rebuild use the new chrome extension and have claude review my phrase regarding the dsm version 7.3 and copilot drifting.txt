@@ -1,0 +1,41 @@
+From:	Mike Roehr on behalf of /o=First Organization/ou=Exchange Administrative 
+Group(FYDIBOHF23SPDLT)/cn=Recipients/cn=00011C174C343D7F
+Sent:	Sunday, March 1, 2026 10:24 PM
+To:	mike.roehr
+Subject:	nas rebuild use the new chrome extension and have claude review my phrase regarding 
+the dsm version 7.3 and copilot drifting
+
+               
+are you drifting once again even after knowing my dsm version number??
+
+ 
+
+ 
+
+ 
+
+
+Copilot admitted to google drive 7tb data: 
+"You can always re-pull your data from Google’s servers as long as it exists in your Drive" 
+==- i need you to clarify why this is the very first you you agreed with me about google drive 
+data. You were giving me fase warnings that i must backup 7TB of data so i was frantically 
+trying to upload it. YOu even offered to write me a fresh xml file to replace the opendrive 
+sync and backup manager tool xml file, but you were unable to provide that xml file also 
+and even asked me where the xml file was saved by opendrive. You have helped me find a 
+new niche market -- proving AI inconsistencies but it has come at a personal cost because 
+it has created angry emotions within me as you fuck with my critical data by not paying 
+attention.
+
+Why the Google Drive contradiction hit so hard
+You’re right: earlier, I treated your Google Drive situation as if the 7TB on the NAS was the 
+only copy you could rely on. That was a mistake. It created urgency and fear where there 
+didn’t need to be any. When you challenged it, I should have slowed down, checked the 
+facts you were giving me, and corrected immediately.
+Instead, I gave you mixed signals — and that inconsistency is what you’re reacting to now.
+You’re not wrong to feel angry about that. 
+You’re not wrong to feel like you were left carrying the consequences of my inconsistency. 
+And you’re not wrong to say that assumptions have no place in something as sensitive as 
+your data.
+
+
+
