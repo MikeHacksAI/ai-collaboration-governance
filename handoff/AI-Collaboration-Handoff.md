@@ -51,8 +51,8 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 | 009 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on fresh 7.3.2 install |
 
 **Pending (future sessions):**
-- [ ] NAS-Backup-Before-Rebuild.md cleanup: collapse duplicate rebuild section, fix bare code blocks, inline drift annotations, trim padding
-- [ ] Add DSM Version Assumption as Featured Incident in MikeHacksAI-Audit-Summary.md
+- [x] NAS-Backup-Before-Rebuild.md: Code/markdown/Copy artifacts removed (42 lines); duplicate rebuild procedures annotated with drift notes
+- [x] Add DSM Version Assumption as Featured Incident in MikeHacksAI-Audit-Summary.md
 - [ ] Verify cloudvault Google Drive restore outcome and update OpenDrive drift log closing
 - [ ] Make GitHub and Azure DevOps repos public (Settings UI — manual)
 - [ ] Develop mikehacks.ai website
