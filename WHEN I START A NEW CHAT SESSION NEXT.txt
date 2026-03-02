@@ -1,8 +1,14 @@
 When You Start A New Chat Session
-Tell the AI:
+===================================
 
-Please read the following files before we begin:
+VS Code / GitHub Copilot:
+  The .github/copilot-instructions.md file in this workspace auto-injects context.
+  No manual steps needed -- Copilot reads it automatically at session start.
 
-handoff/AI-Collaboration-Handoff_02-28-2026.md
-project-summary/PROJECT_SUMMARY.md
-governance/Mikes AI Collaboration Charter.md
+Other AI tools (Claude, ChatGPT, DeepSeek, etc.):
+  Tell the AI: Please read the following files before we begin:
+
+  1. handoff/AI-Collaboration-Handoff.md
+  2. project-summary/PROJECT_SUMMARY.md
+  3. governance/Mikes AI Collaboration Charter.md
+  4. ai-chat-history/MikeHacksAI-Audit-Summary.md

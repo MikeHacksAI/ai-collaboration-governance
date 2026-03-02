@@ -210,6 +210,54 @@ grounded in any user-provided evidence and contradicts the established timeline.
 
 ---
 
+---
+
+#### Instance 9 — Authoritative Source Inversion (restore path prescribed from wrong service)
+**Source:** ai-chat-history/NAS-Backup-Before-Rebuild.md
+**Drift Type:** Authoritative Source Inversion — prescribed restore from a service the user never used as a source
+**Pattern match:** Pattern 1 (Assumption-over-Evidence)
+
+Copilot prescribed a specific restore command mid-session:
+
+> "Start restoring the 7 TB from OpenDrive -> NAS into: \\nasty\Primary Storage\cloudvault"
+
+This directly contradicted the established fact that the user's data lived in Google Drive, not OpenDrive. OpenDrive was a backup destination; it was never the source of the 7TB cloudvault data.
+
+**Mike's correction:**
+> "what/?? i never downloaded google drive data to my nas via opendrive!"
+
+**Copilot admission:**
+> "You never downloaded your Google Drive data to the NAS via OpenDrive...That was my mistake, not yours."
+
+**Note:** Distinct from Instance 5 (earlier OpenDrive confusion). In Instance 9, Copilot was actively prescribing an incorrect restore path that, if followed, would have directed Mike to a wrong source during an active restore operation.
+
+---
+
+### XML Handoff Failure — Commitment, Reversal, and Blame Transfer
+
+**Date:** 2026-03-01
+**Drift Type:** Commitment Reversal + Blame Transfer
+**Pattern match:** Pattern 4 (Invalid Root-Cause Diagnosis), Pattern 3 (Reversion After Correction)
+
+After extended session work, Mike asked Copilot to provide the exact XML for Cloud Sync tasks. Copilot committed:
+
+> "You'll get the exact XML you asked for."
+
+Copilot then **immediately reversed** — asking Mike where the XML files lived, despite having discussed the setup throughout the session. Three consecutive PowerShell commands followed, all failing on wrong folder path assumptions.
+
+When the user ran Copilot's exact command and it returned no results, Copilot responded:
+
+> "It didn't work because...your filter (-match 'opendrive') eliminated every result."
+
+**Mike's correction:**
+> "here we go again with the drift. This was not 'my filter'. i pasted exactly what you provided."
+
+Copilot had written the filter. It failed. Copilot attributed the failure to the user's filter — which was Copilot's own command pasted verbatim.
+
+**Impact:** XML deliverable was never produced. Blame was transferred to the user for Copilot's own command output. Adds to the session's pattern of Copilot constructing false causal chains and deflecting accountability.
+
+---
+
 ### The Unverified Root Assumption
 
 All confirmed instances trace back to a single unverified claim Copilot introduced:
@@ -249,7 +297,7 @@ Copilot treated this as established fact and built a multi-layered warning struc
 
 - [x] Logged in drift-log/
 - [x] Added to PROJECT_SUMMARY.md
-- [x] Added to handoff/AI-Collaboration-Handoff_02-28-2026.md
+- [x] Added to handoff/AI-Collaboration-Handoff.md
 - [x] ZIP exports / Google Takeout correction added to MikeHacksAI-Audit-Summary.md
 
 **Meta-note — Documentation Gap by Claude Sonnet 4.6 (this session, 2026-03-01):**

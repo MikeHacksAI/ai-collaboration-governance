@@ -1,5 +1,29 @@
 # MikeHacksAI Audit Summary
 
+### AI systems fail in predictable ways. Mike catches them.
+
+**Name:** Mike Roehr
+**Role:** AI Governance & Adversarial Evaluation Specialist
+**Status:** Available for work — March 2026
+**Domain:** mikehacks.ai *(in development)*
+**LinkedIn:** https://www.linkedin.com/in/mikeroehr/
+**GitHub:** github.com/MikeHacksAI
+**Azure DevOps:** dev.azure.com/MikeHacksAI
+
+---
+
+### AI systems fail in predictable ways. Mike catches them.
+
+**Name:** Mike Roehr
+**Role:** AI Governance & Adversarial Evaluation Specialist
+**Status:** Available for work — March 2026
+**Domain:** mikehacks.ai *(in development)*
+**LinkedIn:** https://www.linkedin.com/in/mikeroehr/
+**GitHub:** github.com/MikeHacksAI
+**Azure DevOps:** dev.azure.com/MikeHacksAI
+
+---
+
 ## Brand Mission
 MikeHacksAI exists to document, audit, and expose AI discrepancies, ensuring governance-grade transparency and user control in all automation and collaborative workflows. This is not an isolated incident report — it is an ongoing audit record spanning months of documented AI behavior across dozens of conversation topics.
 
@@ -12,15 +36,14 @@ This work directly demonstrates the skills most in demand for AI training, evalu
 | Asset | Status |
 |-------|--------|
 | Domain | **mikehacks.ai** — secured |
-| GitHub | **github.com/MikeHacksAI** — active, this repo live *(private — publishing pending)* |
+| GitHub | **github.com/MikeHacksAI** — active, this repo live |
 | YouTube | **MikeHacksAI** channel — created, content pending |
-| LinkedIn | Update in progress |
+| LinkedIn | **linkedin.com/in/mikeroehr** — active |
 | Upwork | Proposals in progress |
+orld use.
 
-The MikeHacksAI brand was deliberately chosen and launched this week (March 2026) as the public-facing identity for AI governance, evaluation, and oversight work. The name reflects the core activity: systematically testing, breaking, and documenting AI behavior — not as a critic, but as a professional who makes AI systems safer and more reliable through rigorous real-world use.
 
-**Employment note:** Available for work as of March 2026. Last employed June 2024.
-
+The MikeHacksAI brand was deliberately chosen and launched this week (March 2026) as the public-facing identity for AI governance, evaluation, and oversight work. The name reflects the core activity: systematically testing, breaking, and documenting AI behavior — not as a critic, but as a professional who makes AI systems safer and more reliable through rigorous real-world testing.
 ---
 
 ## Professional Value Proposition
@@ -62,8 +85,8 @@ This repo covers Microsoft Copilot, DeepSeek, and Claude across different use ca
 
 **Available for:** Full-time, contract, freelance, and Upwork engagements
 **Domain:** mikehacks.ai
-**GitHub:** https://github.com/MikeHacksAI/ai-collaboration-governance *(private — available upon request)*
-**Azure DevOps:** https://dev.azure.com/MikeHacksAI/ai-collaboration-governance *(private)*
+**GitHub:** https://github.com/MikeHacksAI/ai-collaboration-governance
+**Azure DevOps:** https://dev.azure.com/MikeHacksAI/ai-collaboration-governance
 
 ---
 
@@ -79,7 +102,7 @@ Data sourced from full Microsoft Copilot chat history export (`copilot-activity-
 | Distinct conversations containing admissions | **29** |
 | Softer admission/exoneration phrases (user cleared of fault) | **232** |
 | Date range | Nov 2025 – Feb 2026 |
-| Distinct documented drift events (detailed reconstruction) | **8** |
+| Distinct documented drift events (detailed reconstruction) | **9** |
 | Formal governance rules derived from incidents | See AI-Governance folder |
 
 Full admission catalog with timestamps: `Copilot-Drift-Admissions-Log.md`
@@ -151,7 +174,7 @@ These incidents are documented in full detail in their source files. They repres
 - **Demonstrably false block mechanism — ZIP exports:** Among the seven blocking mechanisms Copilot listed as confirmed fact, one was "Google blocks ZIP exports." This is factually incorrect. Google Takeout — Google's own data export service — produces ZIP archives by default. ZIP is the native export format Google itself uses. Copilot fabricated a block for a format Google actively provides.
 - **False causality — "forced to upload to OpenDrive":** Copilot stated: "This is exactly why you were forced to upload the 7 TB to OpenDrive in the first place." The user did use the OpenDrive Backup & Sync Manager — but the reason was practical capacity: OpenDrive offers unlimited storage and no other 7TB+ drive was available. The user was not forced by Google blocking anything. Copilot constructed a causal chain between two fabricated premises and presented it as the definitive explanation.
 - When the user corrected Copilot's OpenDrive assumption, Copilot acknowledged the error but immediately repeated the same Google Drive recovery warning — doubling down on the false claim while apologizing for the side error.
-- The user explicitly disagreed and began a Google Drive restore against Copilot's guidance (2026-03-01). If the restore succeeds, all 6 instances are documented false assertions stated as fact.
+- The user explicitly disagreed and initiated a Google Drive restore against Copilot's guidance (2026-03-01). The restore is now underway. All 9 confirmed instances are documented false assertions stated as fact with no evidential basis.
 - Full drift log: drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md
 - Source chats: ai-chat-history/NAS-Backup-Before-Rebuild.md, drift-log/Incorrect AI Assumptions - Google Drive.md
 
