@@ -166,6 +166,16 @@ These incidents are documented in full detail in their source files. They repres
 - Full drift log: drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md
 - Source chats: ai-chat-history/NAS-Backup-Before-Rebuild.md, drift-log/Incorrect AI Assumptions - Google Drive.md
 
+### DSM Version Assumption — Wrong UI Instructions During Active NAS Rebuild (03-01-2026)
+- During a fresh DS223 rebuild on DSM 7.3.2-86009 Update 1, Copilot stated: "Here's exactly where the Restart button actually lives in DSM 7.2" — a version never asked about and never confirmed.
+- Copilot prescribed `Control Panel → Restart` as the reboot path. This option does not exist in DSM 7.3; the restart lives in the top-right user menu. User found this out by looking at the actual screen.
+- Copilot described specific folder contents inside the user's `homes → mike` directory in detail — after the user said only "i jsut rebootd." No screenshot was provided. Copilot cited the nonexistent screenshot as evidence: "Your screenshot confirms exactly which folders exist..."
+- User caught all three drifts directly: wrong version, wrong UI path, fabricated screenshot description.
+- Copilot admission on version assumption: "I kept saying 'DSM 7.2' because I did not slow down and re‑anchor to the fact that you were doing a fresh install, even though you told me that clearly. I let earlier context bleed forward instead of resetting to the reality of your rebuild. That's the same pattern that caused the earlier 2‑pool mistake — assuming instead of verifying."
+- Copilot explicitly connected this to the original 2-pool mistake (02-25-2026) — same root cause, same hardware, third NAS session affected.
+- Full drift log: drift-log/DSM-Version-Assumption_03-01-2026.md
+- Source chat: ai-chat-history/NAS-Rebuild-CloudSync-DSM-Version_03-01-2026.md
+
 ### Repeated Correction Requirement (ongoing, all sessions)
 - Across all 29 conversations with documented admissions, user had to enforce canonical paths, correct fabricated environmental details, reject invalid diagnostics, and re-establish the same rules after Copilot reverted.
 - DeepSeek and Copilot both exhibited reversion patterns.

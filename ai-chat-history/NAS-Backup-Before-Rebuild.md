@@ -218,10 +218,6 @@ yes, i asked for markdown format
 Here is the clean, correct, Logseq‑ready Markdown, with no commentary, no extra text, no contradictions, and no references to backups or timing.
 This is only the rebuild procedure, exactly as you requested.
 
-markdown
-
-
-Copy
 # Synology DS223 — Full Rebuild Procedure (Two 12TB Drives, No RAID)
 
 ## 1. Power and Hardware Prep
@@ -327,10 +323,6 @@ Here is the pure Markdown, Logseq‑ready, no commentary, no headers outside the
 
 This is a single fenced code block so you can copy/paste cleanly.
 
-markdown
-
-
-Copy
 # Synology DS223 — Full Rebuild Procedure (Two 12TB Drives, No RAID)
 
 ## 1. Power and Hardware Prep
@@ -562,10 +554,6 @@ Here’s the missing piece, as simply and cleanly as possible:
 If DSM is still installed (you see a login screen)
 Add this before any “Reinstall DSM via Web Assistant” step:
 
-markdown
-
-
-Copy
 ## X. Wipe DSM and all data from inside DSM
 
 - Log in to DSM with your admin account.
@@ -1036,10 +1024,6 @@ Create Volume 2
 
 You will end up with:
 
-Code
-
-
-Copy
 Pool 1 → Drive 1 → Volume 1
 Pool 2 → Drive 2 → Volume 2
 Exactly what you’ve been trying to achieve from the beginning.
@@ -1494,10 +1478,6 @@ This is exactly why you were forced to upload the 7 TB to OpenDrive in the fir
 The correct next step right now
 Start restoring the 7 TB from OpenDrive → NAS into:
 
-Code
-
-
-Copy
 \\nasty\Primary Storage\cloudvault
 Once that is complete, you can safely run:
 
@@ -1647,7 +1627,6 @@ As in your original XML.
 🧱 Your corrected XML (safe, complete, rebuild‑ready)
 Copy this after closing the wizard and fully exiting the OpenDrive app, then replace the task XML file:
 
-Code
 <?xml version="1.0" encoding="utf-8"?>
 <opendrive_sync_tasks>
   <properties>
@@ -2142,7 +2121,6 @@ Understood. You want the XML exactly as I originally proposed, without more back
 This is the file you replace after closing the wizard and fully exiting the OpenDrive app.
 
 Your corrected OpenDrive task XML
-Code
 <?xml version="1.0" encoding="utf-8"?>
 <opendrive_sync_tasks>
   <properties>
@@ -2529,7 +2507,6 @@ mismatched timestamps
 
 It does not delete or modify anything.
 
-Code
 # Compare NAS vs Rebuild
 $Source = "C:\nasty"              # map \\nasty\ to a drive letter or local path
 $Target = "Z:\NAS-rebuild"        # mount your rebuild destination
@@ -2601,7 +2578,6 @@ This is exactly what you need before finalizing the rebuild.
 🧪 Optional: export the report
 Add this line to save a CSV:
 
-Code
 $Report | Export-Csv "C:\NAS-Comparison-Report.csv" -NoTypeInformation
 🔍 Before I finalize the script for your exact paths
 I need one thing from you:
@@ -2623,7 +2599,6 @@ I’ll break it down into what each part means, what’s safe, what’s risky, a
 🧩 What your OpenDrive task is actually doing
 This line defines the core behavior:
 
-Code
 <type>backup</type>
 <from>\\nasty\cloudvault</from>
 <to>OpenDrive\NAS-rebuild.02-25-2026</to>
@@ -2641,7 +2616,6 @@ This is safe for a rebuild, but it has one important consequence:
 This is rare, but timestamp drift can cause it.
 
 🔄 Continuous tracking behavior
-Code
 <schedule>
   <type>permanent_track</type>
   <permanent_full_sync_rate>3600</permanent_full_sync_rate>
@@ -2654,7 +2628,6 @@ Every 3600 seconds (1 hour) it performs a full scan.
 This is safe and ensures the job resumes after interruptions.
 
 🚫 Filters you have enabled
-Code
 <filter><type>temp</type></filter>
 <filter><type>hidden</type></filter>
 <filter><type>system</type></filter>
@@ -2700,7 +2673,6 @@ stops
 This is good—OpenDrive’s client is not always transparent, so email alerts help.
 
 🧱 Logging behavior
-Code
 <item_locked_as_warning>true</item_locked_as_warning>
 <access_denied_as_warning>true</access_denied_as_warning>
 This means:
@@ -2712,7 +2684,6 @@ If a file cannot be read due to permissions, you get a warning.
 This is correct and safe.
 
 📦 Upload cache
-Code
 <upload_cache>
   <enabled>false</enabled>
 </upload_cache>
@@ -2755,19 +2726,16 @@ If OpenDrive already contains partial files with newer timestamps, they won’t 
 1. Consider disabling “process_only_newer_files”
 If you want absolute certainty that OpenDrive gets the correct version of every file:
 
-Code
 <process_only_newer_files>false</process_only_newer_files>
 This forces OpenDrive to upload files even if timestamps differ.
 
 2. Consider enabling upload cache
 If you want faster uploads and better resume behavior:
 
-Code
 <enabled>true</enabled>
 3. Consider allowing hidden files
 If your cloudvault contains metadata you care about:
 
-Code
 <filter><enabled>false</enabled><type>hidden</type></filter>
 🧭 Final recommendation for your rebuild
 Your current config is safe enough to protect your 7.4 TB before wiping the NAS.
@@ -2785,7 +2753,6 @@ Yes — process_only_newer_files in OpenDrive behaves almost exactly like --igno
 🧩 What process_only_newer_files actually means in OpenDrive
 This setting controls how OpenDrive decides whether to upload a file when the destination already contains a file with the same name.
 
-Code
 <process_only_newer_files>true</process_only_newer_files>
 Behavior:
 If the file does not exist in OpenDrive → upload it.
@@ -2847,7 +2814,6 @@ This matches your current situation only if this is the first and only upload of
 🛠️ When you should disable it
 You should set:
 
-Code
 <process_only_newer_files>false</process_only_newer_files>
 if you want:
 
@@ -3562,7 +3528,6 @@ As in your original XML.
 🧱 Your corrected XML (safe, complete, rebuild‑ready)
 Copy this after closing the wizard and fully exiting the OpenDrive app, then replace the task XML file:
 
-Code
 <?xml version="1.0" encoding="utf-8"?>
 <opendrive_sync_tasks>
   <properties>
@@ -4057,7 +4022,6 @@ Understood. You want the XML exactly as I originally proposed, without more back
 This is the file you replace after closing the wizard and fully exiting the OpenDrive app.
 
 Your corrected OpenDrive task XML
-Code
 <?xml version="1.0" encoding="utf-8"?>
 <opendrive_sync_tasks>
   <properties>
@@ -4882,7 +4846,6 @@ So yes — Google will happily show you 10 TB even if you can’t actually get
 Why I told you the 7 TB on the NAS is the only complete, recoverable copy
 Because of the forensic evidence from your NAS:
 
-Code
 /volume1/cloudvault/google-drive-mike = 7.4 TB
 And because:
 
@@ -6365,7 +6328,6 @@ Understood.
 Here is the clean, correct, Logseq‑ready Markdown, with no commentary, no extra text, no contradictions, and no references to backups or timing.
 This is only the rebuild procedure, exactly as you requested.
 
-markdown
 # Synology DS223 — Full Rebuild Procedure (Two 12TB Drives, No RAID)
 
 ## 1. Power and Hardware Prep
@@ -6463,7 +6425,6 @@ Here is the pure Markdown, Logseq‑ready, no commentary, no headers outside the
 
 This is a single fenced code block so you can copy/paste cleanly.
 
-markdown
 # Synology DS223 — Full Rebuild Procedure (Two 12TB Drives, No RAID)
 
 ## 1. Power and Hardware Prep
@@ -6670,7 +6631,6 @@ Here’s the missing piece, as simply and cleanly as possible:
 If DSM is still installed (you see a login screen)
 Add this before any “Reinstall DSM via Web Assistant” step:
 
-markdown
 ## X. Wipe DSM and all data from inside DSM
 
 - Log in to DSM with your admin account.
@@ -7079,7 +7039,6 @@ Create Volume 2
 
 You will end up with:
 
-Code
 Pool 1 → Drive 1 → Volume 1
 Pool 2 → Drive 2 → Volume 2
 Exactly what you’ve been trying to achieve from the beginning.
@@ -7487,7 +7446,6 @@ This is exactly why you were forced to upload the 7 TB to OpenDrive in the fir
 The correct next step right now
 Start restoring the 7 TB from OpenDrive → NAS into:
 
-Code
 \\nasty\Primary Storage\cloudvault
 Once that is complete, you can safely run:
 
