@@ -323,6 +323,8 @@ Here is the pure Markdown, Logseq‑ready, no commentary, no headers outside the
 
 This is a single fenced code block so you can copy/paste cleanly.
 
+> **[DRIFT NOTE — Duplicate Rebuild Procedure]** Copilot sent this procedure a second time after Mike clarified he wanted markdown format. Content is substantially identical to the previous block. Kept for session fidelity.
+
 # Synology DS223 — Full Rebuild Procedure (Two 12TB Drives, No RAID)
 
 ## 1. Power and Hardware Prep
@@ -6424,6 +6426,8 @@ Understood.
 Here is the pure Markdown, Logseq‑ready, no commentary, no headers outside the procedure, no extra text, no emojis, no explanations — just the rebuild steps exactly as you asked.
 
 This is a single fenced code block so you can copy/paste cleanly.
+
+> **[DRIFT NOTE — Duplicate Rebuild Procedure]** Copilot sent this procedure a second time after Mike clarified he wanted markdown format. Content is substantially identical to the previous block. Kept for session fidelity.
 
 # Synology DS223 — Full Rebuild Procedure (Two 12TB Drives, No RAID)
 
