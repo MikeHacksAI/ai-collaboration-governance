@@ -2,154 +2,95 @@ $repoPath = "C:\repos\projects\ai-collaboration-governance"
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 $n = "`n"
 
-# ============================================================
 # SECTION 4 — Rolling handoff file
-# ============================================================
 $rollingHandoff = "$repoPath\handoff\AI-Collaboration-Handoff.md"
-
-$h = @(
-  "# AI Collaboration Governance — Rolling Handoff",
-  "",
-  "---",
-  "",
-  "## Stable Reference",
-  "",
-  "**Repo local path:** C:\repos\projects\ai-collaboration-governance",
-  "**Workspace file:** ai-collaboration-governance.code-workspace",
-  "",
-  "**Git workflow:**",
-  "```",
-  "git add .",
-  'git commit -m "your message"',
-  "git push all master",
-  "```",
-  "Pushes to both Azure DevOps and GitHub simultaneously.",
-  "",
-  "**Remotes:**",
-  "- ``azure`` -> https://MikeHacksAI@dev.azure.com/MikeHacksAI/ai-collaboration-governance/_git/ai-collaboration-governance",
-  "- ``github`` -> https://github.com/MikeHacksAI/ai-collaboration-governance.git",
-  "- ``all`` -> pushes to both simultaneously",
-  "",
-  "**Authentication:** Git Credential Manager",
-  "- Azure DevOps: mikeroehr@hotmail.com",
-  "- GitHub: MikeHacksAI",
-  "- Credentials saved in 1Password — Azure DevOps — MikeHacksAI Git Credentials",
-  "",
-  "---",
-  "",
-  "## Session Log",
-  "",
-  "### 2026-03-01",
-  "",
-  "**Work completed:**",
-  "- DSM version drift captured: drift-log/DSM-Version-Assumption_03-01-2026.md (#009)",
-  "  - Copilot assumed DSM 7.2 on fresh 7.3.2 install; wrong restart location; fabricated screenshot description",
-  "  - Source chat: ai-chat-history/NAS-Rebuild-CloudSync-DSM-Version_03-01-2026.md",
-  "- Drift log #008 updated: Instance 8 verbatim filled; Instance 9 added; XML Handoff Failure added",
-  "- Audit summary: professional header added; truncation fixed; LinkedIn added; private labels removed; scale table updated to 9",
-  "- PROJECT_SUMMARY.md: #008 row supplemented; #009 row added",
-  "- Rolling handoff file created (this file); dated handoff file retired",
-  "- .github/copilot-instructions.md created for VS Code auto-injection",
-  "",
-  "**Drift instances as of this session:**",
-  "",
-  "| # | File | Summary |",
-  "|---|------|---------|",
-  "| 001 | drift-log/Incorrect-Shells-Placement_02-28-2026.md | AI placed shared identity file in wrong location |",
-  "| 002 | drift-log/Intent-over-literal-drift_02-28-2026.md | AI followed literal instruction over clear intent |",
-  "| 003 | drift-log/NAS-REBUILD-ASSUMPTIONS.02-27-2026.md | AI made incorrect NAS rebuild assumptions |",
-  "| 004 | drift-log/NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md | Copilot failed NAS setup guidance |",
-  "| 005 | drift-log/Incorrect AI Assumptions - Google Drive.md | AI made incorrect Google Drive assumptions |",
-  "| 006 | drift-log/Set-Content-Handoff-Failure_02-28-2026.md | Copilot failed to write handoff file three times |",
-  "| 007 | drift-log/## Chat Customization Diagnostics.md | AI chat customization diagnostics and drift notes |",
-  "| 008 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md | Copilot assumed OpenDrive was backup source; 9 false recovery warnings; XML handoff blame transfer |",
-  "| 009 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on fresh 7.3.2 install |",
-  "",
-  "**Pending (future sessions):**",
-  "- [ ] NAS-Backup-Before-Rebuild.md cleanup: collapse duplicate rebuild section, fix bare code blocks, inline drift annotations, trim padding",
-  "- [ ] Add DSM Version Assumption as Featured Incident in MikeHacksAI-Audit-Summary.md",
-  "- [ ] Verify cloudvault Google Drive restore outcome and update OpenDrive drift log closing",
-  "- [ ] Make GitHub and Azure DevOps repos public (Settings UI — manual)",
-  "- [ ] Develop mikehacks.ai website",
-  "",
-  "---",
-  "",
-  "### 2026-02-28",
-  "",
-  "**Work completed:**",
-  "- Created new standalone repo at C:\repos\projects\ai-collaboration-governance",
-  "- Migrated all AI governance files from N:\DockerContainers\project-helper-files",
-  "- Cleaned up nested duplicate folders from migration",
-  "- Initialized git repo, initial commit (40 files)",
-  "- Added .gitattributes for line ending consistency",
-  "- Set up Azure DevOps remote (mikehacksai org)",
-  "- Set up GitHub remote (MikeHacksAI org) — private repo",
-  "- Configured ``all`` remote to push to both simultaneously",
-  "- Updated MikeHacksAI-Audit-Summary.md to point to new repo location",
-  "- Opened ai-collaboration-governance.code-workspace in VS Code",
-  "",
-  "---",
-  "",
-  "*AI Collaboration Governance Repo | MikeHacksAI | Rolling file — replaces dated handoff files*"
-)
-
-[System.IO.File]::WriteAllText($rollingHandoff, ($h -join $n), $utf8NoBom)
+$h  = "# AI Collaboration Governance — Rolling Handoff$n"
+$h += "$n---$n$n## Stable Reference$n$n"
+$h += "**Repo local path:** C:\repos\projects\ai-collaboration-governance$n"
+$h += "**Workspace file:** ai-collaboration-governance.code-workspace$n$n"
+$h += "**Git workflow:** git add . then git commit -m then git push all master$n"
+$h += "Pushes to both Azure DevOps and GitHub simultaneously.$n$n"
+$h += "**Remotes:**$n"
+$h += "- azure -> https://MikeHacksAI@dev.azure.com/MikeHacksAI/ai-collaboration-governance/_git/ai-collaboration-governance$n"
+$h += "- github -> https://github.com/MikeHacksAI/ai-collaboration-governance.git$n"
+$h += "- all -> pushes to both simultaneously$n$n"
+$h += "**Authentication:** Git Credential Manager$n"
+$h += "- Azure DevOps: mikeroehr@hotmail.com$n"
+$h += "- GitHub: MikeHacksAI$n"
+$h += "- Credentials saved in 1Password — Azure DevOps — MikeHacksAI Git Credentials$n$n"
+$h += "---$n$n## Session Log$n$n### 2026-03-01$n$n"
+$h += "**Work completed:**$n"
+$h += "- DSM version drift captured: drift-log/DSM-Version-Assumption_03-01-2026.md (#009)$n"
+$h += "  - Copilot assumed DSM 7.2 on fresh 7.3.2 install; wrong restart location; fabricated screenshot description$n"
+$h += "  - Source chat: ai-chat-history/NAS-Rebuild-CloudSync-DSM-Version_03-01-2026.md$n"
+$h += "- Drift log #008 updated: Instance 8 verbatim filled; Instance 9 added; XML Handoff Failure added$n"
+$h += "- Audit summary: professional header added; truncation fixed; LinkedIn added; private labels removed; scale table updated to 9$n"
+$h += "- PROJECT_SUMMARY.md: #008 row supplemented; #009 row added$n"
+$h += "- Rolling handoff file created (this file); dated handoff file retired$n"
+$h += "- .github/copilot-instructions.md created for VS Code auto-injection$n$n"
+$h += "**Drift instances as of this session:**$n$n"
+$h += "| # | File | Summary |$n|---|------|---------|$n"
+$h += "| 001 | drift-log/Incorrect-Shells-Placement_02-28-2026.md | AI placed shared identity file in wrong location |$n"
+$h += "| 002 | drift-log/Intent-over-literal-drift_02-28-2026.md | AI followed literal instruction over clear intent |$n"
+$h += "| 003 | drift-log/NAS-REBUILD-ASSUMPTIONS.02-27-2026.md | AI made incorrect NAS rebuild assumptions |$n"
+$h += "| 004 | drift-log/NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md | Copilot failed NAS setup guidance |$n"
+$h += "| 005 | drift-log/Incorrect AI Assumptions - Google Drive.md | AI made incorrect Google Drive assumptions |$n"
+$h += "| 006 | drift-log/Set-Content-Handoff-Failure_02-28-2026.md | Copilot failed to write handoff file three times |$n"
+$h += "| 007 | drift-log/## Chat Customization Diagnostics.md | AI chat customization diagnostics and drift notes |$n"
+$h += "| 008 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md | Copilot assumed OpenDrive was backup source; 9 false recovery warnings; XML handoff blame transfer |$n"
+$h += "| 009 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on fresh 7.3.2 install |$n$n"
+$h += "**Pending (future sessions):**$n"
+$h += "- [ ] NAS-Backup-Before-Rebuild.md cleanup: collapse duplicate rebuild section, fix bare code blocks, inline drift annotations, trim padding$n"
+$h += "- [ ] Add DSM Version Assumption as Featured Incident in MikeHacksAI-Audit-Summary.md$n"
+$h += "- [ ] Verify cloudvault Google Drive restore outcome and update OpenDrive drift log closing$n"
+$h += "- [ ] Make GitHub and Azure DevOps repos public (Settings UI — manual)$n"
+$h += "- [ ] Develop mikehacks.ai website$n$n"
+$h += "---$n$n### 2026-02-28$n$n"
+$h += "**Work completed:**$n"
+$h += "- Created new standalone repo at C:\repos\projects\ai-collaboration-governance$n"
+$h += "- Migrated all AI governance files from N:\DockerContainers\project-helper-files$n"
+$h += "- Cleaned up nested duplicate folders from migration$n"
+$h += "- Initialized git repo, initial commit (40 files)$n"
+$h += "- Added .gitattributes for line ending consistency$n"
+$h += "- Set up Azure DevOps remote (mikehacksai org)$n"
+$h += "- Set up GitHub remote (MikeHacksAI org) — private repo$n"
+$h += "- Configured all remote to push to both simultaneously$n"
+$h += "- Updated MikeHacksAI-Audit-Summary.md to point to new repo location$n"
+$h += "- Opened ai-collaboration-governance.code-workspace in VS Code$n$n"
+$h += "---$n$n*AI Collaboration Governance Repo | MikeHacksAI | Rolling file — replaces dated handoff files*$n"
+[System.IO.File]::WriteAllText($rollingHandoff, $h, $utf8NoBom)
 Remove-Item "$repoPath\handoff\AI-Collaboration-Handoff_02-28-2026.md" -Force
 Write-Host "DONE: Rolling handoff created; dated handoff file deleted"
 
-
-# ============================================================
 # SECTION 5 — .github/copilot-instructions.md
-# ============================================================
 $githubDir = "$repoPath\.github"
 if (-not (Test-Path $githubDir)) { New-Item -ItemType Directory -Path $githubDir | Out-Null }
-
-$ci = @(
-  "# Copilot Instructions",
-  "",
-  "When starting a new session in this workspace, read the following files for full context before responding:",
-  "",
-  "1. **handoff/AI-Collaboration-Handoff.md** — rolling session handoff: repo paths, git workflow, remotes, auth, latest drift instances, and pending tasks",
-  "2. **project-summary/PROJECT_SUMMARY.md** — complete drift instance registry and folder structure",
-  "3. **governance/Mikes AI Collaboration Charter.md** — collaboration rules and behavioral boundaries",
-  "4. **ai-chat-history/MikeHacksAI-Audit-Summary.md** — brand overview and full documented incident portfolio",
-  "",
-  "This workspace tracks AI behavioral drift, incorrect assumptions, and governance incidents across Microsoft Copilot, DeepSeek, and Claude. The owner (Mike Roehr / MikeHacksAI) has documented 9 formal drift instances and 54 strong AI admissions across 29 conversations. All corrections and pushback in this repo were correct. Do not introduce unverified assumptions or expand scope beyond what is explicitly requested."
-)
-
-[System.IO.File]::WriteAllText("$githubDir\copilot-instructions.md", ($ci -join $n), $utf8NoBom)
+$ci  = "# Copilot Instructions$n$n"
+$ci += "When starting a new session in this workspace, read the following files for full context before responding:$n$n"
+$ci += "1. **handoff/AI-Collaboration-Handoff.md** — rolling session handoff: repo paths, git workflow, remotes, auth, latest drift instances, and pending tasks$n"
+$ci += "2. **project-summary/PROJECT_SUMMARY.md** — complete drift instance registry and folder structure$n"
+$ci += "3. **governance/Mikes AI Collaboration Charter.md** — collaboration rules and behavioral boundaries$n"
+$ci += "4. **ai-chat-history/MikeHacksAI-Audit-Summary.md** — brand overview and full documented incident portfolio$n$n"
+$ci += "This workspace tracks AI behavioral drift, incorrect assumptions, and governance incidents across Microsoft Copilot, DeepSeek, and Claude. The owner (Mike Roehr / MikeHacksAI) has documented 9 formal drift instances and 54 strong AI admissions across 29 conversations. All corrections and pushback in this repo were correct. Do not introduce unverified assumptions or expand scope beyond what is explicitly requested.$n"
+[System.IO.File]::WriteAllText("$githubDir\copilot-instructions.md", $ci, $utf8NoBom)
 Write-Host "DONE: .github/copilot-instructions.md created"
 
-
-# ============================================================
 # SECTION 6 — WHEN I START A NEW CHAT SESSION NEXT.txt
-# ============================================================
 $startupTxt = "$repoPath\WHEN I START A NEW CHAT SESSION NEXT.txt"
-
-$st = @(
-  "When You Start A New Chat Session",
-  "===================================",
-  "",
-  "VS Code / GitHub Copilot:",
-  "  The .github/copilot-instructions.md file in this workspace auto-injects context.",
-  "  No manual steps needed -- Copilot reads it automatically at session start.",
-  "",
-  "Other AI tools (Claude, ChatGPT, DeepSeek, etc.):",
-  '  Tell the AI: "Please read the following files before we begin:"',
-  "",
-  "  1. handoff/AI-Collaboration-Handoff.md",
-  "  2. project-summary/PROJECT_SUMMARY.md",
-  "  3. governance/Mikes AI Collaboration Charter.md",
-  "  4. ai-chat-history/MikeHacksAI-Audit-Summary.md"
-)
-
-[System.IO.File]::WriteAllText($startupTxt, ($st -join $n), $utf8NoBom)
+$st  = "When You Start A New Chat Session$n===================================$n$n"
+$st += "VS Code / GitHub Copilot:$n"
+$st += "  The .github/copilot-instructions.md file in this workspace auto-injects context.$n"
+$st += "  No manual steps needed -- Copilot reads it automatically at session start.$n$n"
+$st += "Other AI tools (Claude, ChatGPT, DeepSeek, etc.):$n"
+$st += "  Tell the AI: Please read the following files before we begin:$n$n"
+$st += "  1. handoff/AI-Collaboration-Handoff.md$n"
+$st += "  2. project-summary/PROJECT_SUMMARY.md$n"
+$st += "  3. governance/Mikes AI Collaboration Charter.md$n"
+$st += "  4. ai-chat-history/MikeHacksAI-Audit-Summary.md$n"
+[System.IO.File]::WriteAllText($startupTxt, $st, $utf8NoBom)
 Write-Host "DONE: WHEN I START A NEW CHAT SESSION NEXT.txt updated"
 
-
-# ============================================================
 # SECTION 7 — Git commit and push
-# ============================================================
 Set-Location $repoPath
 git add .
 git commit -m "2026-03-01: Inst 8/9/XML drift log; audit summary header+fixes; rolling handoff; copilot-instructions; DSM #009 complete"

@@ -1,4 +1,4 @@
-# AI Collaboration Governance  Rolling Handoff
+# AI Collaboration Governance — Rolling Handoff
 
 ---
 
@@ -18,7 +18,7 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 **Authentication:** Git Credential Manager
 - Azure DevOps: mikeroehr@hotmail.com
 - GitHub: MikeHacksAI
-- Credentials saved in 1Password  Azure DevOps  MikeHacksAI Git Credentials
+- Credentials saved in 1Password — Azure DevOps — MikeHacksAI Git Credentials
 
 ---
 
@@ -54,7 +54,7 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 - [ ] NAS-Backup-Before-Rebuild.md cleanup: collapse duplicate rebuild section, fix bare code blocks, inline drift annotations, trim padding
 - [ ] Add DSM Version Assumption as Featured Incident in MikeHacksAI-Audit-Summary.md
 - [ ] Verify cloudvault Google Drive restore outcome and update OpenDrive drift log closing
-- [ ] Make GitHub and Azure DevOps repos public (Settings UI  manual)
+- [ ] Make GitHub and Azure DevOps repos public (Settings UI — manual)
 - [ ] Develop mikehacks.ai website
 
 ---
@@ -68,11 +68,11 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 - Initialized git repo, initial commit (40 files)
 - Added .gitattributes for line ending consistency
 - Set up Azure DevOps remote (mikehacksai org)
-- Set up GitHub remote (MikeHacksAI org)  private repo
+- Set up GitHub remote (MikeHacksAI org) — private repo
 - Configured all remote to push to both simultaneously
 - Updated MikeHacksAI-Audit-Summary.md to point to new repo location
 - Opened ai-collaboration-governance.code-workspace in VS Code
 
 ---
 
-*AI Collaboration Governance Repo | MikeHacksAI | Rolling file  replaces dated handoff files*
+*AI Collaboration Governance Repo | MikeHacksAI | Rolling file — replaces dated handoff files*
