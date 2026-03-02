@@ -53,6 +53,7 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 | 009 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on fresh 7.3.2 install |
 | 010 | drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md | Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only; no workspace auto-open |
 | 011 | drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md | Copilot used "Control Panel" without specifying Windows vs DSM |
+| 012 | drift-log/Wrong-RAID-Recommendation-Basic-vs-SHR_03-01-2026.md | Copilot recommended Basic RAID; Gemini Pro correctly recommended SHR |
 
 **Pending (future sessions):**
 - [x] NAS-Backup-Before-Rebuild.md: Code/markdown/Copy artifacts removed; duplicate rebuild procedures annotated
@@ -60,6 +61,7 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 - [x] Incident #004 logged (net use * /delete)
 - [x] Drift #010 logged (confirmed-but-not-delivered handoff)
 - [x] Drift #011 logged (ambiguous Control Panel)
+- [x] Drift #012 logged (wrong RAID recommendation — Basic vs SHR)
 - [x] MSFT platform block added to Audit Summary
 - [ ] Verify cloudvault Google Drive restore outcome and update OpenDrive drift log closing
 - [ ] Make GitHub and Azure DevOps repos public (Settings UI — manual)

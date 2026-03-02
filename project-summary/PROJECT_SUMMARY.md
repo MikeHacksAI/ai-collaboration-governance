@@ -46,6 +46,7 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 009 | 2026-03-01 | drift-log/DSM-Version-Assumption_03-01-2026.md | Copilot assumed DSM 7.2 on a fresh 7.3.2 install; gave wrong restart location; described unsubmitted screenshot as evidence | Logged |
 | 010 | 2026-03-02 | drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md | Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only solution; no workspace auto-open; no cross-tool disclosure | Logged |
 | 011 | 2026-03-01 | drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md | Copilot used "Control Panel" without specifying Windows vs DSM in active dual-environment troubleshooting | Logged |
+| 012 | 2026-03-01 | drift-log/Wrong-RAID-Recommendation-Basic-vs-SHR_03-01-2026.md | Copilot recommended Basic RAID for DS223; Gemini Pro correctly recommended SHR; user adopted Gemini guidance | Logged |
 
 ---
 
