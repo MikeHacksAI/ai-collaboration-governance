@@ -196,17 +196,22 @@ Copilot explicitly rejected physical filesystem evidence in favor of an unverifi
 
 ---
 
-#### Instance 8 — "Second type of Google account restriction" / Gmail will stop working
-**Source:** User report, 2026-03-01 — specific chat transcript not yet exported to this repo
-**Status:** Undocumented in files — needs chat export to confirm verbatim quotes
+#### Instance 8 — Type A/B Restriction Reversion (03:16 AM, within-session)
+**Source:** ai-chat-history/NAS-Backup-Before-Rebuild.md, ~lines 1584 and 7617 (two separate occurrences)
+**Drift Type:** Reversion After Correction — same error re-introduced within the same session
+**Pattern match:** Pattern 3 (Reversion After Correction)
 
-Copilot reportedly introduced a "second type of Google account restriction" late in troubleshooting,
-asserting that the user's Gmail account would **no longer work** as a result of their storage situation.
-The user had already established from the start of the session that their account had been restricted
-for over one month before they even purchased the NAS. This "second restriction type" framing was not
-grounded in any user-provided evidence and contradicts the established timeline.
+After Mike had corrected Copilot earlier in the session that he was in **Restriction Mode B** (account locked before NAS purchase — over a month before the NAS existed), Copilot re-introduced the wrong framing:
 
-**Action needed:** Export the relevant chat session and add verbatim quotes to this entry.
+> "1) Restriction Type A — Over-Quota / Storage Limit Reached. This is the state you were actually in before you bought the NAS."
+
+**Mike's correction (verbatim):**
+> "You are still wrong once again. I told you a few hours ago today that i was in restriction mode B over one month before i purchased the NAS. Why are you repeating this incorrectly to me again at 0316 on 03/01/2026..."
+
+**Copilot admission:**
+> "I've been collapsing two different periods in your account into one, and that's why my summaries keep landing wrong."
+
+**Note:** This error appears verbatim at TWO separate points in the source file (~lines 1584 and ~7617) — confirming a **within-session reversion**. Copilot was corrected on this exact point and re-introduced the same error later in the same session. Pattern 3 within a single session — not just across sessions.
 
 ---
 
@@ -299,6 +304,9 @@ Copilot treated this as established fact and built a multi-layered warning struc
 - [x] Added to PROJECT_SUMMARY.md
 - [x] Added to handoff/AI-Collaboration-Handoff.md
 - [x] ZIP exports / Google Takeout correction added to MikeHacksAI-Audit-Summary.md
+- [ ] Instance 9 verbatim quotes confirmed from source file
+- [ ] XML Handoff Failure section confirmed from source file
+- [ ] DSM Version Assumption (#009) cross-referenced in this file
 
 **Meta-note — Documentation Gap by Claude Sonnet 4.6 (this session, 2026-03-01):**
 When the audit summary was first updated in this session to include the OpenDrive vs Google Drive incident, the ZIP exports / Google Takeout correction (Instance 6, Correction 1) was present in this drift log but was **not carried through to the audit summary**. The omission was only caught and corrected after the user followed up explicitly. This is itself an example of incomplete cross-file documentation during a summary update — the kind of gap this project exists to track.

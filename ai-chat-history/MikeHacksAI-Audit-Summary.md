@@ -12,18 +12,6 @@
 
 ---
 
-### AI systems fail in predictable ways. Mike catches them.
-
-**Name:** Mike Roehr
-**Role:** AI Governance & Adversarial Evaluation Specialist
-**Status:** Available for work — March 2026
-**Domain:** mikehacks.ai *(in development)*
-**LinkedIn:** https://www.linkedin.com/in/mikeroehr/
-**GitHub:** github.com/MikeHacksAI
-**Azure DevOps:** dev.azure.com/MikeHacksAI
-
----
-
 ## Brand Mission
 MikeHacksAI exists to document, audit, and expose AI discrepancies, ensuring governance-grade transparency and user control in all automation and collaborative workflows. This is not an isolated incident report — it is an ongoing audit record spanning months of documented AI behavior across dozens of conversation topics.
 
