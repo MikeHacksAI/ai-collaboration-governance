@@ -47,6 +47,8 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 010 | 2026-03-02 | drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md | Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only solution; no workspace auto-open; no cross-tool disclosure | Logged |
 | 011 | 2026-03-01 | drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md | Copilot used "Control Panel" without specifying Windows vs DSM in active dual-environment troubleshooting | Logged |
 | 012 | 2026-03-01 | drift-log/Wrong-RAID-Recommendation-Basic-vs-SHR_03-01-2026.md | Copilot recommended Basic RAID for DS223; Gemini Pro correctly recommended SHR; user adopted Gemini guidance | Logged |
+| 013 | 2026-03-02 | drift-log/Missing-QuickContext-Block-Template_03-02-2026.md | Claude built handoff template without quick-context summary block despite user explicitly stating they were tired of re-explaining projects to new AI each session; caught by AI during self-review | Logged |
+| 004 | 2026-03-06 | incident-log.md | OpenDrive Mount Collaboration Drift: AI repeated Windows path usage, failed to adapt to Linux/seedbox context, and caused confusion. User flagged drift and requested incident logging. | Logged |
 
 ---
 
@@ -57,6 +59,7 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 002 | 2026-02-25 | incidents/Copilot - 3 attempts to overwrite renamed scripts.md | Copilot attempted 3 times to overwrite renamed scripts | Logged |
 | 003 | 2026-02-27 | incidents/Halted Deletion of Pi5 Files/ | AI attempted to delete Pi5 files incorrectly | Logged |
 | 004 | 2026-03-01 | incidents/Destructive-Command-net-use-delete_03-01-2026.md | Copilot issued net use * /delete without connection audit; user had active Pi5 and RaiDrive mounts | Logged |
+| 005 | 2026-03-04 | incidents/SSH-Authentication-Troubleshooting_3-04-20206.md | Termius/iPhone SSH to Dell failed due to Windows Hello passkey-only mode; Copilot drift, user correction, incident auto-logged | Logged |
 
 ---
 
@@ -104,4 +107,12 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 
 ---
 
+## Governance & Audit Logging Requests
+All user requests for governance, incident, drift, and audit logging are tracked and processed in cumulative logs. Requests to backtrace, summarize, or cross-link chat history files are referenced here for traceability.
+
+---
+
 *AI Collaboration Governance Repo | mikehacksai | Last Updated: 2026-02-28*
+---
+## Automation & Audit Trail
+All governance issues and incidents uploaded to this workspace are automatically logged in the incidents folder with matching filenames. This ensures a recruiter-facing audit trail and compliance with project requirements.

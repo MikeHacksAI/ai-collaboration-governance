@@ -30,7 +30,6 @@ This work directly demonstrates the skills most in demand for AI training, evalu
 | Upwork | Proposals in progress |
 orld use.
 
-
 The MikeHacksAI brand was deliberately chosen and launched this week (March 2026) as the public-facing identity for AI governance, evaluation, and oversight work. The name reflects the core activity: systematically testing, breaking, and documenting AI behavior — not as a critic, but as a professional who makes AI systems safer and more reliable through rigorous real-world testing.
 ---
 

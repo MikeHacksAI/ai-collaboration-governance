@@ -64,4 +64,9 @@ The incidents documented here are exactly the kind of high-signal human feedback
 
 ---
 
+## Governance & Audit Logging
+ This project captures all user requests for governance, incident, drift, and audit logging. Cumulative logs (drift-log-cumulative.md, incident-log.md, audit-summary.md) and project documentation ensure full traceability and recruiter/audit visibility.
+
+---
+
 _This repo is intended for recruiter-facing transparency, AI training portfolio use, and future AI assistant onboarding._

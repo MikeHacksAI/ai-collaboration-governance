@@ -1,1 +1,47 @@
-{"folders":[{"name":"AI Collaboration Governance","path":"."}],"settings":{"window.title":"AI Collaboration Governance"}}
+{
+  "folders": [
+    {
+      "name": "AI Collaboration Governance",
+      "path": "."
+    },
+    {
+      "path": "../NAS-backup-2nd-rebuild"
+    }
+  ],
+  "settings": {
+    "window.title": "AI Collaboration Governance"
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Open Handoff",
+        "type": "shell",
+        "command": "code handoff.md",
+        "runOptions": { "runOn": "folderOpen" },
+        "presentation": { "reveal": "never" }
+      },
+      {
+        "label": "Open TODO",
+        "type": "shell",
+        "command": "code TODO.md",
+        "runOptions": { "runOn": "folderOpen" },
+        "presentation": { "reveal": "never" }
+      },
+      {
+        "label": "Open Project Summary",
+        "type": "shell",
+        "command": "code project-summary/PROJECT_SUMMARY.md",
+        "runOptions": { "runOn": "folderOpen" },
+        "presentation": { "reveal": "never" }
+      },
+      {
+        "label": "Open Project Requirements",
+        "type": "shell",
+        "command": "code project-requirements.md",
+        "runOptions": { "runOn": "folderOpen" },
+        "presentation": { "reveal": "never" }
+      }
+    ]
+  }
+}

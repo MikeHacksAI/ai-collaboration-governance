@@ -22,6 +22,46 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 
 ---
 
+
+## Incident & Drift Automation
+
+
+
+The system automatically scans the following folders for new incident, drift, chat history, and context files:
+- incidents/
+- drift-log/
+- ai-chat-history/ (including all subfolders)
+
+Any new file added to these folders—including HTML context files and user-generated markdown files—will be detected and processed for recruiter-audit-ready logging and summary. Manual notification is not required. If you save an HTML file for context and generate a markdown file for review, simply place them in the appropriate folder for automatic processing.
+
+---
+
+## Workspace Organization Guidance (Auto-Open)
+
+This handoff file should auto-open for the next AI session. It contains workspace organization guidance and recommendations:
+
+- Folders are organized by function: incidents, drift-log, governance, handoff, ai-chat-history, scripts, and project-summary.
+- Each folder has a clear purpose, documented in project-summary/PROJECT_SUMMARY.md.
+- Incidents and drift instances are tracked with detailed markdown files and summary tables.
+- AI chat history is separated by platform and includes summary/audit files.
+
+Strengths:
+- Clear separation of concerns
+- Summary tables for quick navigation
+- Thorough audit and drift tracking
+- Migration history documented
+
+Opportunities:
+- Add README.md to scripts/, incidents/, drift-log/, ai-chat-history/
+- Consider subfolders for incidents/ and drift-log/ if volume increases
+- Maintain strict file naming conventions
+- Automate updates to summary tables
+- Use dashboard or index files for quick access
+
+Refer to this section for continuity and planning after reboot or session change.
+
+---
+
 ## Session Log
 
 ### 2026-03-02
@@ -106,19 +146,42 @@ Pushes to both Azure DevOps and GitHub simultaneously.
 
 ---
 
-### 2026-02-28
+### 2026-03-04
 
 **Work completed:**
-- Created new standalone repo at C:\repos\projects\ai-collaboration-governance
-- Migrated all AI governance files from N:\DockerContainers\project-helper-files
-- Cleaned up nested duplicate folders from migration
-- Initialized git repo, initial commit (40 files)
-- Added .gitattributes for line ending consistency
-- Set up Azure DevOps remote (mikehacksai org)
-- Set up GitHub remote (MikeHacksAI org) — private repo
-- Configured all remote to push to both simultaneously
-- Updated MikeHacksAI-Audit-Summary.md to point to new repo location
-- Opened ai-collaboration-governance.code-workspace in VS Code
+- Incident #005 logged: incidents/SSH-Authentication-Troubleshooting_3-04-20206.md
+  - Termius (iPhone) SSH to Dell failed due to Windows Hello passkey-only mode; Copilot troubleshooting drift; user correction led to proper diagnosis and solution; incident auto-logged
+- PROJECT_SUMMARY.md, TODO.md, and project-requirements.md updated: Added automation requirement for recruiter-audit-ready incident logs for every governance issue uploaded
+
+**Drift instances as of this session:**
+
+| #   | File                                                        | Summary                                                                                   |
+|-----|-------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| 001 | drift-log/Incorrect-Shells-Placement_02-28-2026.md          | AI placed shared identity file in wrong location                                           |
+| 002 | drift-log/Intent-over-literal-drift_02-28-2026.md           | AI followed literal instruction over clear intent                                          |
+| 003 | drift-log/NAS-REBUILD-ASSUMPTIONS.02-27-2026.md             | AI made incorrect NAS rebuild assumptions                                                 |
+| 004 | drift-log/NAS-Setup-Failure-MSFT-Copilot_02-25-2026.md      | Copilot failed NAS setup guidance                                                         |
+| 005 | drift-log/Incorrect AI Assumptions - Google Drive.md         | AI made incorrect Google Drive assumptions                                                |
+| 006 | drift-log/Set-Content-Handoff-Failure_02-28-2026.md         | Copilot failed to write handoff file three times                                          |
+| 007 | drift-log/## Chat Customization Diagnostics.md               | AI chat customization diagnostics and drift notes                                         |
+| 008 | drift-log/OpenDrive-vs-GoogleDrive-NASBackup_03-01-2026.md  | Copilot assumed OpenDrive was backup source; 9 false recovery warnings; XML handoff blame |
+| 009 | drift-log/DSM-Version-Assumption_03-01-2026.md              | Copilot assumed DSM 7.2 on fresh 7.3.2 install                                            |
+| 010 | drift-log/Confirmed-But-Not-Delivered-Rolling-Handoff_03-02-2026.md | Claude confirmed rolling handoff auto-launch; delivered Copilot Chat-only; no workspace auto-open |
+| 011 | drift-log/Ambiguous-ControlPanel-DSM-vs-Windows_03-01-2026.md | Copilot used "Control Panel" without specifying Windows vs DSM                            |
+| 012 | drift-log/Wrong-RAID-Recommendation-Basic-vs-SHR_03-01-2026.md | Copilot recommended Basic RAID; Gemini Pro correctly recommended SHR                      |
+| 013 | drift-log/Missing-QuickContext-Block-Template_03-02-2026.md | Claude built handoff template without quick-context summary block despite user request     |
+
+**Pending (future sessions):**
+- [x] SSH authentication troubleshooting incident auto-logged and recruiter-audit-ready
+- [x] Automation requirement for incident logging documented in all summary and requirements files
+
+---
+
+## Drift Logging & Handoff
+- Maintain a single, cumulative drift-log-cumulative.md in the repo root for recruiter/audit visibility
+- Each drift/adherence incident must be appended to drift-log-cumulative.md with datestamp and time
+- Link each entry to its detailed markdown file in drift-log/
+- Use visually engaging markdown (emojis, bold, headers)
 
 ---
 
