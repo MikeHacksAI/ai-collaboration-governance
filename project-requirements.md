@@ -29,6 +29,8 @@ Defines the functional, technical, and quality requirements for this project. Up
  🎨 All drift/adherence logs must use visually engaging markdown: include emojis, bold/italic text, and clear section headers for readability and impact.
  🚫 Avoid plain, generic formatting—make logs stand out and be memorable to readers.
 
+ 🕒 All drift log entries must include full date and time in YYYY-MM-DD HH:MM format for audit precision and traceability. Do not use date-only entries.
+
 ---
 
 ## Governance & Audit Logging Requests

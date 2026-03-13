@@ -15,3 +15,9 @@ This folder documents all instances of AI behavioral drift, incorrect assumption
 
 ---
 _Last updated: 2026-03-03_
+
+---
+
+## Centralized Drift Log Policy
+
+Move any relevant drift logs from other projects here for centralized tracking and governance.
