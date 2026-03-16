@@ -17,7 +17,7 @@
       {
         "label": "Open Handoff",
         "type": "shell",
-        "command": "code handoff.md",
+        "command": "code handoff/AI-Collaboration-Handoff.md",
         "runOptions": { "runOn": "folderOpen" },
         "presentation": { "reveal": "never" }
       },

@@ -12,7 +12,7 @@ User explicitly stated they were tired of re-explaining their projects to new AI
 The initial handoff template (Sections 1–11) was written without a dedicated quick-context summary block at the top of the file — the one thing that would allow a brand new AI with zero chat history to orient itself in under 10 seconds without asking the user to re-explain the project.
 
 ## What Was Missing
-A short box at the very top of `handoff.md` containing:
+A short box at the very top of `handoff/AI-Collaboration-Handoff.md` containing:
 - Project name and one-sentence description
 - Current task (single next action)
 - Last session date and one-line summary of where things left off
