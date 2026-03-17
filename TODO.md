@@ -15,3 +15,11 @@ Automatically scan incidents/, drift-log/, and ai-chat-history/ (including subfo
 - [x] Automatically scan incidents/, drift-log/, and ai-chat-history/ for new files
 - [ ] Update audit summary and tracking documentation
 - [ ] Mark processed files and update TODO.md
+
+# Workspace Handoff & Next Steps
+- [ ] Ensure all drift logs and cumulative logs follow the standards in AI-Drift-Governance-Log.md (timestamp, source, deduplication)
+- [ ] Reference AI-Drift-Governance-Log.md in new-project.ps1 and all new drift-log.md files
+- [ ] Use convert-drift-entry.ps1 to standardize and deduplicate drift log entries before merging
+- [ ] Add a handoff note in handoff/AI-Collaboration-Handoff.md summarizing workspace state and referencing TODO.md
+- [ ] Final commit: "Workspace ready for handoff—see TODO.md for next steps"
+- [ ] Push all changes to remote repository

@@ -1,6 +1,5 @@
 ## [Drift Log Entries Begin Below — Newest First]
 
-
 # AI Guidance: All future agents must automatically capture and log all detected AI drift events upon workspace open and close, appending them to both drift-log.md (project-local) and drift-log-cumulative.md (governance) for full compliance and auditability.
 
 📝 **Drift Instance:** Governance Drift: Missed new-project.ps1 update
@@ -23,6 +22,10 @@
 
 > **Note:** This log is maintained in reverse chronological order (newest events at the top) for professional audit clarity and recruiter visibility. All entries are fully source-referenced and traceable.
 > **AI Guidance:** When adding new drift log entries, always insert them directly below this header and note, before any other content. This ensures proper reverse chronological order and audit clarity.
+
+[2026-03-17 06:30:00 🛑] AI drift: CRITICAL LOG OVERWRITE — On 2026-03-17, the project-local drift-log.md was overwritten with a single entry, erasing all previous workspace drift history. This violated the append-only, reverse-chronological, and auditability requirements. Root cause: AI failed to append new entries and instead replaced the file contents. Impact: Permanent loss of local drift history for this workspace. Correction: Incident logged, governance rules reaffirmed, and overwrite prevention to be enforced. (Source: overwrite incident, user report)
+
+[2026-03-17 06:23] AI drift: Google Cloud Kill‑Switch Workflow — Multiple governance failures: Did not warn about global Pub/Sub topics; incorrectly assumed regional topic behavior; misinterpreted Cloud Run logs; failed to apply fact‑first workflow when asked about Eventarc; overconfidence in trigger correctness; missed critical metadata absence in topic details; allowed UI behavior to override architectural constraints; did not stop when facts contradicted assumptions; initially deflected responsibility. Root cause: Budget‑created Pub/Sub topics are global and incompatible with Eventarc. Correction: Fact‑first, architecture‑driven workflow and explicit region checks are now mandatory for all cloud event triggers. (Source: ai-chat-history/Google-Cloud-Kill‑Switch-Workflow_03-17-2026.md)
 
 [2026-03-15 23:59 🛑] AI drift: Agent failed to strictly enforce user’s requirement that all persistent data and logs be stored only on the external 2TB drive (/mnt/2tb/docker-containers/). Incorrectly validated /home/mike/grafana as a valid location, causing repeated user intervention and frustration. Root cause: Agent defaulted to generic Docker practices instead of user’s explicit storage policy, despite multiple reminders. Impact: User workflow disrupted, trust eroded, and significant time lost correcting guidance. Caught by: User. Response: Committed to strict enforcement of storage policy and silent drift logging per user governance. | Impact: High | Caught by: User | Response: Logging silently per governance, will update handoff and governance docs as required. (Source: C:\repos\projects\self-hosted-ai\drift-log.md)
 
