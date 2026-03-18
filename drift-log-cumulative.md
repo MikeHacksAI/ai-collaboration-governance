@@ -1,6 +1,40 @@
-## [Drift Log Entries Begin Below — Newest First]
-
 # AI Guidance: All future agents must automatically capture and log all detected AI drift events upon workspace open and close, appending them to both drift-log.md (project-local) and drift-log-cumulative.md (governance) for full compliance and auditability.
+## [Drift Log Entries Begin Below — Newest First]
+---
+---
+📝 **Drift Instance:** Kill-Switch Architecture Misguidance & Systemic Oversight
+🕒 **Date:** 2026-03-18 02:08
+⚠️ **Source:** ai-chat-history/AI-Governance-Failure-Record-Kill‑Switch-Architecture-Misguidance_3-18-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Details:**
+• Architectural Misrepresentation: AI incorrectly asserted kill-switch could be implemented with Billing Budget → Pub/Sub (regional) → Eventarc → Cloud Run, failing to validate incompatibility between global Pub/Sub topics and Eventarc's regional requirements.
+• False Confirmation of UI Interpretation: AI misled user about UI states, region selectors, and toggles, contradicting earlier conclusions and causing wasted effort.
+• Failure to Halt When Facts Contradicted Guidance: AI continued to push incorrect architecture despite user evidence, violating Charter requirement to stop when facts do not align.
+• Incorrect Root Cause Attribution: AI blamed UI version differences and hidden controls instead of recognizing architectural incompatibility.
+• High-Confidence Assertions Without Evidence: AI made several unverified, false statements about UI and workflow.
+• Failure to Recognize System-Level Constraints: AI did not check Google Cloud product boundaries, resulting in hours of misdirection and user frustration.
+• Emotional Impact and Trust Degradation: Contradictory guidance led to user frustration, loss of confidence, and decision to move project to another AI model.
+Correction: All future guidance must validate architectural compatibility, halt immediately when facts contradict guidance, and avoid high-confidence assertions without evidence. This incident is a formal governance failure record.
+---
+
+🧩 **Drift Instance:** Format Drift: Inconsistent log entry structure caused wasted time
+🕒 **Date:** 2026-03-18 00:10
+⚠️ **Source:** drift-log-cumulative.md, Copilot insertion
+**Model:** GPT-4.1 (Microsoft Copilot)
+🧩 **Details:** The Oracle/Google Cloud VM Setup Guidance drift entry was logged in a non-compliant, single-block format, inconsistent with the required fielded structure. This caused wasted user time for manual correction and violated auditability requirements stated in the log header. Correction: All future entries must use the fielded, labeled format for audit clarity and compliance.
+---
+
+📝 **Drift Instance:** Oracle/Google Cloud VM Setup Guidance — Multiple governance and technical drifts
+🕒 **Date:** 2026-03-18 00:05
+⚠️ **Source:** ai-chat-history/Microsoft/Google-Cloud-VM-Setup-Inconsistencies_03-17-2026.htm
+**Model:** GPT-4.1 (Microsoft Copilot)
+🧩 **Details:**
+• Region Change Misrepresentation: AI incorrectly implied Oracle Cloud "Home Region" can be changed after account creation (it cannot).
+• ARM Availability Confusion: AI conflated "Home Region" with "Compute Region" and ARM availability, leading to misleading guidance.
+• Unstable Free Tier Claims: AI presented user forum anecdotes as authoritative validation for Oracle Free Tier instability, without distinguishing from official documentation.
+• Overconfident Guidance: AI gave overconfident, absolute answers about cloud reliability and best practices, lacking sufficient caveats or official references.
+Correction: All future guidance must clearly distinguish between official documentation and user reports, avoid overconfident claims, and accurately represent cloud provider limitations.
+---
 
 📝 **Drift Instance:** Governance Drift: Missed new-project.ps1 update
 🕒 **Date:** 2026-03-13 17:34
