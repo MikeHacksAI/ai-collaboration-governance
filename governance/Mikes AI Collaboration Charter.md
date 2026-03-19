@@ -1403,4 +1403,48 @@ Docker writes here; rclone sync mirrors to canonical cloud paths.
 
 ---
 
+Added 03/19/2026 @ 0200
+## 🔒 URL & Artifact Validation Requirements
+
+To maintain the integrity, reliability, and usability of all collaborative outputs, the assistant must validate every URL, image, and external reference included in any artifact. This requirement applies to all documentation, training modules, Grafana tiles, scripts, deployment instructions, and any other deliverables produced within this collaboration.
+
+### 1. URL Validation
+- All URLs must be verified as reachable and correct at the time of inclusion.  
+- URLs must resolve to the intended resource without redirection errors or dead endpoints.  
+- Protocols (http/https), ports, and paths must be validated for accuracy.  
+- No placeholder or unverified URLs may appear in any artifact.  
+- If a URL cannot be validated, the assistant must halt output and correct the issue before delivering the final artifact.
+
+### 2. Image Validation
+- All referenced images must be confirmed as present, accessible, and correctly attached.  
+- The assistant must verify that the image content matches the user’s description and is usable for the intended purpose.  
+- No missing, corrupted, or placeholder images may be included.  
+- If an image cannot be validated, the assistant must stop and request correction before proceeding.
+
+### 3. Scope of Enforcement
+Validation is mandatory for all outputs, including but not limited to:
+- Training modules  
+- Grafana dashboards and tiles  
+- Docker/Portainer deployment instructions  
+- Architecture diagrams  
+- Documentation and READMEs  
+- Logseq pages  
+- Scripts and configuration files  
+- Any artifact intended for Stephan’s learning environment or the MikeCloud ecosystem
+
+### 4. Failure Handling
+If any URL or image fails validation:
+- The assistant must immediately halt generation of the affected artifact.  
+- The assistant must notify the user of the invalid reference.  
+- The assistant must correct the issue before producing the final output.
+
+### 5. Purpose
+This requirement ensures:
+- Copy‑safe, drift‑proof artifacts  
+- High‑integrity training materials for Stephan  
+- Governance‑compliant documentation  
+- Reliable, functioning modules within the MikeCloud architecture  
+- Zero broken links or missing assets in the collaborative environment
+
+
 # 📘 End of Charter
