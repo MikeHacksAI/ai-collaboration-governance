@@ -1,3 +1,4 @@
+
 # TODO — AI Collaboration Governance
 
 - [x] Review and update handoff/AI-Collaboration-Handoff.md
@@ -15,6 +16,19 @@ Automatically scan incidents/, drift-log/, and ai-chat-history/ (including subfo
 - [x] Automatically scan incidents/, drift-log/, and ai-chat-history/ for new files
 - [ ] Update audit summary and tracking documentation
 - [ ] Mark processed files and update TODO.md
+
+# Automation Tracking
+
+- [ ] Scan incidents/, drift-log/, ai-chat-history/ for new files on open/close
+- [ ] Log recruiter-audit-ready summary for each new file
+- [ ] Summarize Microsoft chat history files
+- [ ] Log governance, incident, and drift findings for each untracked file
+- [ ] Mark processed files below and update TODO.md
+- [ ] Update audit summary and tracking documentation
+- [ ] Confirm drift-log.md and drift-log-cumulative.md updated on user request
+
+## Processed Files (Automation)
+- [ ] (List processed files here as automation runs)
 
 # Workspace Handoff & Next Steps
 - [ ] Ensure all drift logs and cumulative logs follow the standards in AI-Drift-Governance-Log.md (timestamp, source, deduplication)

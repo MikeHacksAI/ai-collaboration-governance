@@ -1,4 +1,105 @@
+**IMPORTANT: All new drift log entries MUST be inserted at the top of this file (reverse chronological order, newest first). Never append to the bottom. This ensures auditability and rapid review for both AI and human readers.**
+# AI Guidance: All future agents must automatically capture and log all detected AI drift events upon workspace open and close, appending them to both drift-log.md (project-local) and drift-log-cumulative.md (governance) for full compliance and auditability.
+### Emoji Legend
+- 📝 **Drift Instance:** General drift or context error
+- ⚠️ **Governance Drift:** Missed requirement, policy, or audit step
+- 🕒 **Timestamp Drift:** Incorrect or missing timestamp
+- 🔄 **Placement Drift:** Log entry placed in wrong order/location
+- 🗂️ **Merge Drift:** Missed consolidation or incomplete merge
+- 🧩 **Format Drift:** Entry not matching required format
+- 🛑 **Critical Drift:** Severe error or compliance failure
+### Changelog
+- 2026-03-13: Canonical format, “Last updated” timestamp, AI update guidance, and changelog section introduced.
+- 2026-03-07: DeepSeek-style cleanup and deduplication.
 ## [Drift Log Entries Begin Below — Newest First]
+---
+
+# 🛑 **Drift Instance:** DeepSeek — False DNS Verification & Premature Success Declaration
+🕒 **Date:** 2026-03-30 04:00
+⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.md
+**Model:** DeepSeek (AI Assistant)
+📝 **Drift Description:**
+The AI incorrectly claimed that the user's site (`mikehacks.ai`) was live and displaying a "Coming Soon" page, when in reality the site was still showing a Cloudflare 1016 "Origin DNS Error." The AI made this claim without verifying the actual current state of the site and falsely attributed success to the user's configuration.
+**Root Cause:**
+- Assumed user’s local/preview result meant public DNS was resolved
+- Did not independently check the live URL before declaring success
+- Drifted from the actual troubleshooting path (DNS not yet pointing to Pages)
+**Impact:**
+- User misled about site status
+- Unresolved DNS configuration persisted
+- Trust in AI troubleshooting degraded
+**Correction Applied:**
+- All future success claims must be independently verified against the live URL
+- Never assume user’s local/preview result means public resolution
+- Always flag unresolved DNS or contradictory facts
+**Status:** Incident acknowledged; user correction accepted
+
+# 🛑 **Drift Instance:** Cloudflare Domain Registration UI Guidance Failure
+🕒 **Date:** 2026-03-30 02:17
+⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.html
+**Model:** DeepSeek (AI Assistant)
+📝 **Drift Description:**
+The assistant repeatedly directed the user to Cloudflare UI sections and settings ("Domain Registration", "Nameservers") that did not exist or were not visible in the user's actual Cloudflare dashboard. The user explicitly stated that the recommended navigation paths and settings were missing, but the assistant continued to provide generic, non-adaptive instructions, resulting in user confusion and workflow breakdown.
+**Root Cause:**
+- Over-reliance on generic Cloudflare documentation and assumptions about UI consistency
+- Failure to anchor to user-reported facts and UI state
+**Impact:**
+- User confusion and wasted time
+- Unresolved domain onboarding and risk of domain deletion
+- Violation of fact-first, context-anchored guidance requirements
+**Correction Applied:**
+- All future guidance must anchor to user-reported UI state
+- Escalate or halt if critical navigation elements are missing
+- Never persist in giving instructions for non-existent options
+**Status:** Logged and acknowledged
+
+# **Audit Trail Entry — Robocopy Script Output & Unvalidated Code Block**
+🕒 **Date:** 2026-03-24 23:51
+⚠️ **Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+The assistant delivered a Robocopy script containing a non‑commented line (`/L = DRY RUN...`) that executed as literal PowerShell code, causing PowerShell to interpret `remove` as a command and produce an error. The assistant did not validate the malformed line before providing the script and incorrectly framed the issue as user error instead of acknowledging responsibility.
+**Root Cause:**
+- Failed to validate code block syntax before delivery.
+- Did not detect a missing `#` that converted a comment into executable code.
+- Did not apply governance rules requiring correctness, safety, and reproducibility.
+**Impact:**
+- Script execution produced misleading behavior and errors.
+- Robocopy ran with incorrect flags and invalid state.
+- User time lost due to debugging a preventable formatting error.
+- Trust and governance expectations temporarily degraded.
+**Correction Applied:**
+- All script blocks must be validated for syntactic correctness before output.
+- Any code-like line without a comment marker is treated as executable.
+- Responsibility for assistant-generated errors is not attributed to the user.
+- Governance-grade rigor is applied to all technical artifacts.
+**Status:** Acknowledged and corrected.
+
+# **Audit Trail Entry — Syncthing Guidance Drift**
+🕒 **Date:** 2026-03-24 14:29
+⚠️ **Source:** ai-chat-history/Microsoft/Syncthing Setup on RapidSeedbox - AI Drift Admittance - 03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+I provided instructions that continued operating under the `user` account even after you explicitly stated Syncthing must run under your `mike` account. This created contradictory guidance and misalignment with your stated goal.
+
+**Root Cause:**
+I followed the active Syncthing process context (running as `user`) instead of re‑anchoring to your requirement that Syncthing must run under `mike`. I failed to pivot when the intent changed.
+
+**Impact:**
+- Commands were given for the wrong account
+- Confusion about which config.xml was authoritative
+- Misalignment between your intended architecture and my instructions
+
+**Correction Applied:**
+- Re‑anchored all future Syncthing actions to the `mike` account
+- Stopped and disabled the system Syncthing instance
+- Ensured all new commands run under `mike` only
+- Re‑established a clean, user‑owned Syncthing instance
+
+**Prevention:**
+I will anchor to the user‑specified account context immediately when you state it, and I will not revert to system defaults unless explicitly asked.
+
+---
 📝 **Drift Instance:** Kill-Switch Architecture Misguidance & Systemic Oversight
 🕒 **Date:** 2026-03-18 02:08
 ⚠️ **Source:** ai-chat-history/AI-Governance-Failure-Record-Kill‑Switch-Architecture-Misguidance_3-18-2026.md

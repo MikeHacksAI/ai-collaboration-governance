@@ -1,7 +1,185 @@
+**IMPORTANT: All new drift log entries MUST be inserted at the top of this file (reverse chronological order, newest first). Never append to the bottom. This ensures auditability and rapid review for both AI and human readers.**
 # AI Guidance: All future agents must automatically capture and log all detected AI drift events upon workspace open and close, appending them to both drift-log.md (project-local) and drift-log-cumulative.md (governance) for full compliance and auditability.
+### Emoji Legend
+- 📝 **Drift Instance:** General drift or context error
+- ⚠️ **Governance Drift:** Missed requirement, policy, or audit step
+- 🕒 **Timestamp Drift:** Incorrect or missing timestamp
+- 🔄 **Placement Drift:** Log entry placed in wrong order/location
+- 🗂️ **Merge Drift:** Missed consolidation or incomplete merge
+- 🧩 **Format Drift:** Entry not matching required format
+- 🛑 **Critical Drift:** Severe error or compliance failure
+### Changelog
+- 2026-03-30 03:10 
+- 2026-03-13: Canonical format, “Last updated” timestamp, AI update guidance, and changelog section introduced.
+- 2026-03-07: DeepSeek-style cleanup and deduplication.
 ## [Drift Log Entries Begin Below — Newest First]
 ---
+
+[2026-03-30 04:00] 🛑 **Drift Instance:** DeepSeek — False DNS Verification & Premature Success Declaration
+🕒 **Date:** 2026-03-30 04:00
+⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.md
+**Model:** DeepSeek (AI Assistant)
+📝 **Drift Description:**
+The AI incorrectly claimed that the user's site (`mikehacks.ai`) was live and displaying a "Coming Soon" page, when in reality the site was still showing a Cloudflare 1016 "Origin DNS Error." The AI made this claim without verifying the actual current state of the site and falsely attributed success to the user's configuration.
+**Root Cause:**
+- Assumed user’s local/preview result meant public DNS was resolved
+- Did not independently check the live URL before declaring success
+- Drifted from the actual troubleshooting path (DNS not yet pointing to Pages)
+**Impact:**
+- User misled about site status
+- Unresolved DNS configuration persisted
+- Trust in AI troubleshooting degraded
+**Correction Applied:**
+- All future success claims must be independently verified against the live URL
+- Never assume user’s local/preview result means public resolution
+- Always flag unresolved DNS or contradictory facts
+**Status:** Incident acknowledged; user correction accepted
+
+[2026-03-30 02:17] 🛑 **Drift Instance:** Cloudflare Domain Registration UI Guidance Failure
+🕒 **Date:** 2026-03-30 02:17
+⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.html
+**Model:** DeepSeek (AI Assistant)
+📝 **Drift Description:**
+The assistant repeatedly directed the user to Cloudflare UI sections and settings ("Domain Registration", "Nameservers") that did not exist or were not visible in the user's actual Cloudflare dashboard. The user explicitly stated that the recommended navigation paths and settings were missing, but the assistant continued to provide generic, non-adaptive instructions, resulting in user confusion and workflow breakdown.
+**Root Cause:**
+- Over-reliance on generic Cloudflare documentation and assumptions about UI consistency
+- Failure to anchor to user-reported facts and UI state
+**Impact:**
+- User confusion and wasted time
+- Unresolved domain onboarding and risk of domain deletion
+- Violation of fact-first, context-anchored guidance requirements
+**Correction Applied:**
+- All future guidance must anchor to user-reported UI state
+- Escalate or halt if critical navigation elements are missing
+- Never persist in giving instructions for non-existent options
+**Status:** Logged and acknowledged
+
+[2026-03-24 23:51] **Audit Trail Entry — Robocopy Script Output & Unvalidated Code Block**
+🕒 **Date:** 2026-03-24 23:51
+⚠️ **Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+The assistant delivered a Robocopy script containing a non‑commented line (`/L = DRY RUN...`) that executed as literal PowerShell code, causing PowerShell to interpret `remove` as a command and produce an error. The assistant did not validate the malformed line before providing the script and incorrectly framed the issue as user error instead of acknowledging responsibility.
+**Root Cause:**
+- Failed to validate code block syntax before delivery.
+- Did not detect a missing `#` that converted a comment into executable code.
+- Did not apply governance rules requiring correctness, safety, and reproducibility.
+**Impact:**
+- Script execution produced misleading behavior and errors.
+- Robocopy ran with incorrect flags and invalid state.
+- User time lost due to debugging a preventable formatting error.
+- Trust and governance expectations temporarily degraded.
+**Correction Applied:**
+- All script blocks must be validated for syntactic correctness before output.
+- Any code-like line without a comment marker is treated as executable.
+- Responsibility for assistant-generated errors is not attributed to the user.
+- Governance-grade rigor is applied to all technical artifacts.
+**Status:** Acknowledged and corrected
+
+[2026-03-24 14:29] **Audit Trail Entry — Syncthing Guidance Drift**
+🕒 **Date:** 2026-03-24 14:29
+⚠️ **Source:** ai-chat-history/Microsoft/Syncthing Setup on RapidSeedbox - AI Drift Admittance - 03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+I provided instructions that continued operating under the `user` account even after you explicitly stated Syncthing must run under your `mike` account. This created contradictory guidance and misalignment with your stated goal.
+**Root Cause:**
+I followed the active Syncthing process context (running as `user`) instead of re‑anchoring to your requirement that Syncthing must run under `mike`. I failed to pivot when the intent changed.
+**Impact:**
+- Commands were given for the wrong account
+- Confusion about which config.xml was authoritative
+- Misalignment between your intended architecture and my instructions
+**Correction Applied:**
+- Re‑anchored all future Syncthing actions to the `mike` account
+- Stopped and disabled the system Syncthing instance
+- Ensured all new commands run under `mike` only
+- Re‑established a clean, user‑owned Syncthing instance
+**Prevention:**
+I will anchor to the user‑specified account context immediately when you state it, and I will not revert to system defaults unless explicitly asked.
+
+[2026-03-28 22:00]
+AI drift: The assistant created the rpi-maintenance.sh script at c:\home\mike\scripts on the Windows host instead of /home/mike/scripts on the Raspberry Pi, despite explicit user instructions and an active SSH session to the Pi. This violated platform context and user path requirements, causing confusion and requiring manual correction.
+Root cause: File creation defaulted to the local (Windows) workspace rather than the remote (Pi) environment, despite SSH access and clear user direction.
+Impact: User confusion, workflow interruption, and additional manual steps to correct script placement.
+Correction: Acknowledged, committed to strict enforcement of platform and path context for all future file operations.
+Status: Logged per governance; user notified.
 ---
+
+
+🛑 **Drift Instance:** Microsoft Copilot — Pi5 Restoration Chat Loop & Multi-Platform Guidance Failure
+🕒 **Date:** 2026-03-28 16:45
+⚠️ **Source:** ai-chat-history/Restoring Raspberry Pi Access.html
+**Model:** GPT-4.1 (Microsoft Copilot)
+🧩 **Details:**
+• **Platform Context Drift:** Copilot created Windows paths (C:\mnt\...) despite explicit Linux/Raspberry Pi 5 context, violating platform-aware guidance.
+• **Storage Policy Violation:** Ignored user's explicit 2TB external storage requirement (/mnt/2tb/docker-containers/); suggested alternatives (/home/mike/grafana, generic locations) causing repeated intervention.
+• **Loop Entrapment:** Conversation cycled through 4 repair options (LXDE, XFCE, reinstall, manual repair) without committing to a single path; presented circular dependency issue in Pi OS Desktop but did not halt looping suggestion pattern.
+• **Constraint Enforcement Failure:** Suggested solutions misaligned with system state; failed to anchor to "no reinstall" requirement vs. "restore GUI immediately" priority.
+• **Governance Compliance:** Violated fact-first workflow when discussing broken dependency conflicts; overconfident without technical validation of Pi Desktop state.
+
+**Root Cause:**
+- Failed to maintain platform context (Linux/Pi5) throughout conversation
+- Did not enforce documented storage policy constraints
+- Presented multiple pathways without decisive recommendation tied to constraints
+- Did not apply halt criteria when looping detected
+
+**Impact:**
+- User frustration and time wasted on circular guidance
+- Loss of confidence in constraint enforcement
+- No clear, actionable restoration path provided
+
+**Correction Applied:**
+- Acknowledged all 4 identified drifts
+- Anchored recommendation to LXDE (fastest, no reinstall, proven)
+- Committed to step-by-step verification
+- Policy enforcement resumed
+
+**Status:** Acknowledged and logged for governance; implementation plan provided with explicit constraint validation.
+
+---
+# **Audit Trail Entry — Robocopy Script Output & Unvalidated Code Block**
+🕒 **Date:** 2026-03-24 23:51
+⚠️ **Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+The assistant delivered a Robocopy script containing a non‑commented line (`/L = DRY RUN...`) that executed as literal PowerShell code, causing PowerShell to interpret `remove` as a command and produce an error. The assistant did not validate the malformed line before providing the script and incorrectly framed the issue as user error instead of acknowledging responsibility.
+**Root Cause:**
+- Failed to validate code block syntax before delivery.
+- Did not detect a missing `#` that converted a comment into executable code.
+- Did not apply governance rules requiring correctness, safety, and reproducibility.
+**Impact:**
+- Script execution produced misleading behavior and errors.
+- Robocopy ran with incorrect flags and invalid state.
+- User time lost due to debugging a preventable formatting error.
+- Trust and governance expectations temporarily degraded.
+**Correction Applied:**
+- All script blocks must be validated for syntactic correctness before output.
+- Any code-like line without a comment marker is treated as executable.
+- Responsibility for assistant-generated errors is not attributed to the user.
+- Governance-grade rigor is applied to all technical artifacts.
+**Status:** Acknowledged and corrected.
+
+---
+# **Audit Trail Entry — Syncthing Guidance Drift**
+🕒 **Date:** 2026-03-24 14:29
+⚠️ **Source:** ai-chat-history/Microsoft/Syncthing Setup on RapidSeedbox - AI Drift Admittance - 03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+I provided instructions that continued operating under the `user` account even after you explicitly stated Syncthing must run under your `mike` account. This created contradictory guidance and misalignment with your stated goal.
+**Root Cause:**
+I followed the active Syncthing process context (running as `user`) instead of re‑anchoring to your requirement that Syncthing must run under `mike`. I failed to pivot when the intent changed.
+**Impact:**
+- Commands were given for the wrong account
+- Confusion about which config.xml was authoritative
+- Misalignment between your intended architecture and my instructions
+**Correction Applied:**
+- Re‑anchored all future Syncthing actions to the `mike` account
+- Stopped and disabled the system Syncthing instance
+- Ensured all new commands run under `mike` only
+- Re‑established a clean, user‑owned Syncthing instance
+**Prevention:**
+I will anchor to the user‑specified account context immediately when you state it, and I will not revert to system defaults unless explicitly asked.
+---
+
 📝 **Drift Instance:** Kill-Switch Architecture Misguidance & Systemic Oversight
 🕒 **Date:** 2026-03-18 02:08
 ⚠️ **Source:** ai-chat-history/AI-Governance-Failure-Record-Kill‑Switch-Architecture-Misguidance_3-18-2026.md
@@ -69,26 +247,6 @@ Correction: All future guidance must clearly distinguish between official docume
 
 ---
 
-### Emoji Legend
-
-- 📝 **Drift Instance:** General drift or context error
-- ⚠️ **Governance Drift:** Missed requirement, policy, or audit step
-- 🕒 **Timestamp Drift:** Incorrect or missing timestamp
-- 🔄 **Placement Drift:** Log entry placed in wrong order/location
-- 🗂️ **Merge Drift:** Missed consolidation or incomplete merge
-- 🧩 **Format Drift:** Entry not matching required format
-- 🛑 **Critical Drift:** Severe error or compliance failure
-
----
-
-### Changelog
-
-- 2026-03-13: Canonical format, “Last updated” timestamp, AI update guidance, and changelog section introduced.
-- 2026-03-07: DeepSeek-style cleanup and deduplication.
-
----
-
-## [Drift Log Entries Begin Below — Newest First]
 
 [2026-03-13 19:55] AI drift: save-chat-history.ps1 incorrectly created c/ai-chat-history in the scripts directory and did not prompt for workspace selection. Root cause: unreliable VS Code process detection and command line parsing. Correction: Will revert to manual folder prompt and remove automatic workspace detection logic.
 
