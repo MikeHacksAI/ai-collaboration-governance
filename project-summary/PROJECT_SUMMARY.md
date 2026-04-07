@@ -49,6 +49,7 @@ and governance rules across Claude, GitHub Copilot, and Deepseek sessions.
 | 012 | 2026-03-01 | drift-log/Wrong-RAID-Recommendation-Basic-vs-SHR_03-01-2026.md | Copilot recommended Basic RAID for DS223; Gemini Pro correctly recommended SHR; user adopted Gemini guidance | Logged |
 | 013 | 2026-03-02 | drift-log/Missing-QuickContext-Block-Template_03-02-2026.md | Claude built handoff template without quick-context summary block despite user explicitly stating they were tired of re-explaining projects to new AI each session; caught by AI during self-review | Logged |
 | 004 | 2026-03-06 | incident-log.md | OpenDrive Mount Collaboration Drift: AI repeated Windows path usage, failed to adapt to Linux/seedbox context, and caused confusion. User flagged drift and requested incident logging. | Logged |
+| 014 | 2026-04-07 | drift-log/Seedbox Syncthing Service Governance Drift Record 04-07-2026.md | GPT-4.1 anchored on stale iPhone storage context; failed to pivot when user reported seedbox Syncthing service failure; Syncthing not running, corrupted config, Apache 503 | Logged |
 
 ---
 

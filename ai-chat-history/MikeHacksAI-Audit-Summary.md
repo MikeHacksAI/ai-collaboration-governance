@@ -89,7 +89,7 @@ Data sourced from full Microsoft Copilot chat history export (`copilot-activity-
 | Distinct conversations containing admissions | **29** |
 | Softer admission/exoneration phrases (user cleared of fault) | **232** |
 | Date range | Nov 2025 – Feb 2026 |
-| Distinct documented drift events (detailed reconstruction) | **9** |
+| Distinct documented drift events (detailed reconstruction) | **14** |
 | Formal governance rules derived from incidents | See AI-Governance folder |
 
 Full admission catalog with timestamps: `Copilot-Drift-Admissions-Log.md`
