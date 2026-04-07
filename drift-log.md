@@ -14,6 +14,26 @@
 ## [Drift Log Entries Begin Below — Newest First]
 ---
 
+# 🛑 **Drift Instance:** Microsoft Copilot — Seedbox Syncthing Service Governance Drift
+🕒 **Date:** 2026-04-07 01:46
+⚠️ **Source:** drift-log/Seedbox Syncthing Service Governance Drift Record 04-07-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+During Seedbox Syncthing troubleshooting, the assistant kept following the wrong troubleshooting branch and redirected attention toward iPhone storage even after the user repeatedly stated that the actual failure was the seedbox Syncthing service.
+**Root Cause:**
+- Anchored on outdated iPhone-storage context
+- Failed to update the active hypothesis when the user reported seedbox-side failure repeatedly
+- Did not escalate early enough to direct seedbox diagnostics
+**Impact:**
+- Delayed seedbox service recovery
+- Repeated irrelevant troubleshooting steps
+- User’s correct diagnosis was initially ignored
+**Correction Applied:**
+- Prioritize current user-reported facts over stale context
+- Pivot immediately when the user identifies a live service failure
+- Enforce fact-first validation of service state, access path, and backend health
+**Status:** Logged and cross-linked for governance review.
+
 # 🛑 **Drift Instance:** DeepSeek — False DNS Verification & Premature Success Declaration
 🕒 **Date:** 2026-03-30 04:00
 ⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.md

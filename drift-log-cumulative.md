@@ -9,30 +9,59 @@
 - 🧩 **Format Drift:** Entry not matching required format
 - 🛑 **Critical Drift:** Severe error or compliance failure
 ### Changelog
-- 2026-03-30 03:10 
-- 2026-03-13: Canonical format, “Last updated” timestamp, AI update guidance, and changelog section introduced.
-- 2026-03-07: DeepSeek-style cleanup and deduplication.
 ## [Drift Log Entries Begin Below — Newest First]
----
+[2026-04-07 01:46 🛑] **Drift Instance:** Microsoft Copilot — Seedbox Syncthing Service Governance Drift  
+**Category:** Wrong Root-Cause Path / Incorrect Branch Selection  
+**Source:** drift-log/Seedbox Syncthing Service Governance Drift Record 04-07-2026.md  
+**Model:** GPT-4.1 (Microsoft Copilot)  
+**Caught by:** User  
+**Status:** Logged and cross-linked for governance review  
+**Impact:**  
+- Seedbox Syncthing service outage remained unresolved longer than necessary  
+- Assistant repeated irrelevant iPhone-storage troubleshooting after that issue was already resolved  
+- User had to restate the real failure domain multiple times  
+**Root Cause:**  
+- Anchored on outdated context instead of the user’s current facts  
+- Failed to pivot to seedbox-side diagnostics after repeated service-failure reports  
+- Did not maintain a strict fact-first troubleshooting sequence  
+**Correction:**  
+- Prioritize current user-reported facts over stale context  
+- Pivot immediately when the user identifies a system-side failure  
+- Validate service state, access path, and backend health before branching elsewhere  
+**Evidence:**  
+- [Seedbox Syncthing Service Governance Drift Record 04-07-2026.md](drift-log/Seedbox%20Syncthing%20Service%20Governance%20Drift%20Record%2004-07-2026.md)  
 
-[2026-03-30 04:00] 🛑 **Drift Instance:** DeepSeek — False DNS Verification & Premature Success Declaration
+[2026-03-24 23:51 🛑] **Drift Instance:** Microsoft Copilot — Robocopy Script Output & Unvalidated Code Block  
+**Category:** Script Validation Drift / Output Safety  
+**Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md  
+**Model:** GPT-4.1 (Microsoft Copilot)  
+**Caught by:** User  
+**Status:** Acknowledged and corrected  
+**Impact:**  
+- Script execution produced misleading behavior and errors  
+- Robocopy ran with incorrect flags and invalid state  
+- User time lost due to debugging a preventable formatting error  
+- Trust and governance expectations temporarily degraded  
+**Root Cause:**  
+- Failed to validate code block syntax before delivery  
+- Did not detect a missing `#` that converted a comment into executable code  
+- Did not apply governance rules requiring correctness, safety, and reproducibility  
+**Correction:**  
+- All script blocks must be validated for syntactic correctness before output  
+- Any code-like line without a comment marker is treated as executable  
+- Responsibility for assistant-generated errors is not attributed to the user  
+- Governance-grade rigor is applied to all technical artifacts  
+**Evidence:**  
+- [Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md](ai-chat-history/Incorrect%20script%20output%20+%20unvalidated%20code%20block_AI-drift-admittance-03-24-2026.md)  
+
 🕒 **Date:** 2026-03-30 04:00
 ⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.md
 **Model:** DeepSeek (AI Assistant)
 📝 **Drift Description:**
 The AI incorrectly claimed that the user's site (`mikehacks.ai`) was live and displaying a "Coming Soon" page, when in reality the site was still showing a Cloudflare 1016 "Origin DNS Error." The AI made this claim without verifying the actual current state of the site and falsely attributed success to the user's configuration.
 **Root Cause:**
-- Assumed user’s local/preview result meant public DNS was resolved
-- Did not independently check the live URL before declaring success
-- Drifted from the actual troubleshooting path (DNS not yet pointing to Pages)
 **Impact:**
-- User misled about site status
-- Unresolved DNS configuration persisted
-- Trust in AI troubleshooting degraded
 **Correction Applied:**
-- All future success claims must be independently verified against the live URL
-- Never assume user’s local/preview result means public resolution
-- Always flag unresolved DNS or contradictory facts
 **Status:** Incident acknowledged; user correction accepted
 
 [2026-03-30 02:17] 🛑 **Drift Instance:** Cloudflare Domain Registration UI Guidance Failure
@@ -42,38 +71,16 @@ The AI incorrectly claimed that the user's site (`mikehacks.ai`) was live and di
 📝 **Drift Description:**
 The assistant repeatedly directed the user to Cloudflare UI sections and settings ("Domain Registration", "Nameservers") that did not exist or were not visible in the user's actual Cloudflare dashboard. The user explicitly stated that the recommended navigation paths and settings were missing, but the assistant continued to provide generic, non-adaptive instructions, resulting in user confusion and workflow breakdown.
 **Root Cause:**
-- Over-reliance on generic Cloudflare documentation and assumptions about UI consistency
-- Failure to anchor to user-reported facts and UI state
 **Impact:**
-- User confusion and wasted time
-- Unresolved domain onboarding and risk of domain deletion
-- Violation of fact-first, context-anchored guidance requirements
 **Correction Applied:**
-- All future guidance must anchor to user-reported UI state
-- Escalate or halt if critical navigation elements are missing
-- Never persist in giving instructions for non-existent options
 **Status:** Logged and acknowledged
 
-[2026-03-24 23:51] **Audit Trail Entry — Robocopy Script Output & Unvalidated Code Block**
+
 🕒 **Date:** 2026-03-24 23:51
 ⚠️ **Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md
 **Model:** GPT-4.1 (Microsoft Copilot)
 📝 **Drift Description:**
 The assistant delivered a Robocopy script containing a non‑commented line (`/L = DRY RUN...`) that executed as literal PowerShell code, causing PowerShell to interpret `remove` as a command and produce an error. The assistant did not validate the malformed line before providing the script and incorrectly framed the issue as user error instead of acknowledging responsibility.
-**Root Cause:**
-- Failed to validate code block syntax before delivery.
-- Did not detect a missing `#` that converted a comment into executable code.
-- Did not apply governance rules requiring correctness, safety, and reproducibility.
-**Impact:**
-- Script execution produced misleading behavior and errors.
-- Robocopy ran with incorrect flags and invalid state.
-- User time lost due to debugging a preventable formatting error.
-- Trust and governance expectations temporarily degraded.
-**Correction Applied:**
-- All script blocks must be validated for syntactic correctness before output.
-- Any code-like line without a comment marker is treated as executable.
-- Responsibility for assistant-generated errors is not attributed to the user.
-- Governance-grade rigor is applied to all technical artifacts.
 **Status:** Acknowledged and corrected
 
 [2026-03-24 14:29] **Audit Trail Entry — Syncthing Guidance Drift**
@@ -251,27 +258,16 @@ Correction: All future guidance must clearly distinguish between official docume
 [2026-03-13 19:55] AI drift: save-chat-history.ps1 incorrectly created c/ai-chat-history in the scripts directory and did not prompt for workspace selection. Root cause: unreliable VS Code process detection and command line parsing. Correction: Will revert to manual folder prompt and remove automatic workspace detection logic.
 
 # AI Drift Logging Usage
-[2026-03-13 17:34] AI drift: Missed requirement to create ai-chat-history folder and README.md in every new project. User explicitly requested this, but initial implementation only updated save-chat-history.ps1, not new-project.ps1. Correction: Requirement will be enforced in new-project.ps1 and governance documentation updated.
+[2026-04-02 17:10 🛑] **Drift Instance:** Microsoft Copilot — Cloudflare Zero Trust UI Assumption Drift  
 [2026-03-11 15:00] AI drift: Incorrectly stated that /home/mike does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot.
 [2026-03-11 15:00] AI drift: Incorrectly stated that /mnt/cloudmounts does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot.
 
 [2026-03-13 17:34] AI drift: Missed requirement to create ai-chat-history folder and README.md in every new project. User explicitly requested this, but initial implementation only updated save-chat-history.ps1, not new-project.ps1. Correction: Requirement will be enforced in new-project.ps1 and governance documentation updated.
 
 [2026-03-13 15:14] AI drift: Provided unsupported rclone command (`rclone backend stats onedrive-mike:`) for OneDrive remote, causing workflow disruption and violating fact-first, zero-assumption guidance requirements. User executed a non-functional command, impacting 1Password cleanup notes. Correction: Unsupported command removed from toolkit; preventive rule established to only suggest OneDrive-supported commands.
-
-# 📝 **Drift Instance:** Missed merge of window-staying logic
-# 🕒 **Date:** 2026-03-11 20:31
 # 📝 **Drift Instance:** Port 9000 Conflict Misdiagnosis & ThinLinc Session Risk
-# 🕒 **Date:** 2026-03-12 11:12
-⚠️ **Source:** ai-chat-history/Port 9000 Conflict Misdiagnosis 03-12-2026.md
 🧩 **Details:** Assistant incorrectly recommended terminating a Python process bound to port 9000, assuming it was unrelated to the user's workflow. The process was actually part of an active ThinLinc GUI session. Terminating it would have caused session loss, state corruption, and login failure. The assistant did not follow a fact-first workflow (process origin, parent, working directory) before recommending action. User correctly identified the risk and prevented disruption. Incident logged for governance and drift prevention.
-🛡️ **Governance Notes:** Strict process identification is required before recommending termination. Never assume origin of system-level processes, especially those tied to GUI sessions or remote desktops. Boundary enforcement requires zero guessing.
-✅ **Resolution:** No termination occurred. User preserved session integrity. Portainer troubleshooting continued with correct context.
-# ⚠️ **Source:** new-project.ps1, user request
-# **Model:** GPT-4.1 (Microsoft Copilot)
 # 🗂️ **Details:** User requested merging the window-staying logic from new-project-minimal.ps1 into new-project.ps1 to prevent premature closure. AI failed to fully implement this, resulting in the main script still closing immediately. User flagged the drift and requested correction and documentation. Action: Entry logged, script correction in progress.
----
-
 [2026-03-12 20:50] AI drift: Contradicted instructions about rclone password format. First advised using plain password in config, then clarified rclone expects obscured/encrypted password generated by rclone config. User confusion resulted.
 
 📝 **Drift Instance:** Timestamp generalization error
@@ -280,17 +276,8 @@ Correction: All future guidance must clearly distinguish between official docume
 **Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** Drift log entries were initially recorded with 15:00 instead of the actual time. User flagged the issue and required precise timestamp for traceability. Correction: Entries updated to 15:31.
 ---
-
-🔄 **Drift Instance:** Log placement drift detected
-🕒 **Date:** 2026-03-11 15:21
 ⚠️ **Source:** drift-log-cumulative.md, user request
-**Model:** GPT-4.1 (Microsoft Copilot)
-🧩 **Details:** The retro update drift entry ([2026-03-11 00:36]) was incorrectly placed at the end of drift-log-cumulative.md, violating reverse chronological order and audit instructions. User caught the error and requested correction. Action: Entry moved to the top, audit clarity restored.
----
 
-📝 **Drift Instance:** Incorrect path assumption (/home/mike)
-🕒 **Date:** 2026-03-11 15:20
-⚠️ **Source:** cloud-mounts-project/drift-log.md
 **Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** Incorrectly stated that /home/mike does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot.
 ---
@@ -300,16 +287,8 @@ Correction: All future guidance must clearly distinguish between official docume
 ⚠️ **Source:** cloud-mounts-project/drift-log.md
 **Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** Incorrectly stated that /mnt/cloudmounts does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot.
----
-
 📝 **Drift Instance:** Assumed container deployment was for Windows Docker Desktop/WSL
-🕒 **Date:** 2026-03-11 15:10
-⚠️ **Source:** youtube-downloader/drift-log.md
-**Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** Project-summary/tube-archivist-setup.md clearly specifies setup for Raspberry Pi 5. User clarified the target environment. Action: Documented drift and corrected deployment instructions to focus on Pi 5.
----
-
-📝 **Drift Instance:** Log file created in wrong directory
 🕒 **Date:** 2026-03-11 15:10
 ⚠️ **Source:** youtube-downloader/drift-log.md
 **Model:** GPT-4.1 (Microsoft Copilot)
@@ -319,19 +298,8 @@ Correction: All future guidance must clearly distinguish between official docume
 📝 **Drift Instance:** Retro update corrections
 🕒 **Date:** 2026-03-11 00:36
 ⚠️ **Source:** drift-log-cumulative.md
-**Model:** GPT-4.1 (Microsoft Copilot)
-🧩 **Details:** Project-helper-files folder was missing and added.; drift-log.md was missing and added.; TODO.md was missing and added.; archived-items.code-workspace was missing and added.
----
 
-🗂️ **Drift Instance:** Missed Drift Log Merge Automation
-🕒 **Date:** 2026-03-11 15:20
-⚠️ **Source:** drift-log-cumulative.md, youtube-downloader/drift-log.md, NAS-backup-2nd-rebuild/drift-log.md
-**Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** Some drift log entries with full timestamps from project drift-log.md files were not merged into drift-log-cumulative.md due to incomplete automation and inconsistent entry formats. Correction: All missing entries are now merged, and future merges will ensure full timestamp and source reference for audit clarity.
----
-
-📝 **Drift Instance:** Minor context drift due to file deletion
-🕒 **Date:** 2026-03-05 15:00
 ⚠️ **Source:** drift-log-cumulative.md
 **Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** File deletion caused minor context drift.
@@ -343,14 +311,7 @@ Correction: All future guidance must clearly distinguish between official docume
 **Model:** GPT-4.1 (Microsoft Copilot)
 🧩 **Details:** All files in ai-chat-history/Microsoft folder reviewed, summarized, and logged for governance, incident, and drift relevance. Strong admissions and SSH troubleshooting sessions logged in incident-log.md and audit-summary.md. Full traceability established.
 ---
-
-📝 **Drift Instance:** Google TV Screensaver Guidance Failure
-🕒 **Date:** 2026-03-05 15:00
 ⚠️ **Source:** drift-log-cumulative.md, incident-log.md, ai-chat-history/MikeHacksAI-Audit-Summary.md
-**Model:** GPT-4.1 (Microsoft Copilot)
-🧩 **Details:** Assistant failed to anchor responses to device constraints, introduced invalid options, and did not collapse to the correct solution early. Incident and audit entries created for full traceability.
----
-
 📝 **Drift Instance:** OpenDrive Mount Collaboration Drift
 🕒 **Date:** 2026-03-06 15:00
 ⚠️ **Source:** drift-log-cumulative.md, incident-log.md, ai-chat-history/MikeHacksAI-Audit-Summary.md
