@@ -31,6 +31,46 @@
 **Evidence:**  
 - [Seedbox Syncthing Service Governance Drift Record 04-07-2026.md](drift-log/Seedbox%20Syncthing%20Service%20Governance%20Drift%20Record%2004-07-2026.md)  
 
+[2026-04-02 18:22 🛑] **Drift Instance:** Microsoft Copilot — Cloudflare Tunnel Estimate Drift After UI Mismatch  
+**Category:** Estimate Drift / Execution-Time Miscalculation  
+**Source:** ai-chat-history/Microsoft/AI Estimate Failure — Cloudflare Tunnel Setup 04-02-2026.md  
+**Model:** GPT-4.1 (Microsoft Copilot)  
+**Caught by:** User  
+**Status:** Incident acknowledged and documented  
+**Impact:**  
+- 30-minute completion estimate expanded to 3+ hours of troubleshooting and rework  
+- Repeated invalid navigation cycles increased cognitive load and operational delay  
+- Vaultwarden + Cloudflare Tunnel completion was delayed  
+**Root Cause:**  
+- Estimate depended on outdated UI assumptions rather than verified live interface state  
+- ETA was not recalibrated after user evidence repeatedly contradicted the guidance path  
+**Correction:**  
+- Re-baseline ETA immediately after any core navigation mismatch  
+- Tie time estimates to validated UI state before issuing commitments  
+**Evidence:**  
+- [AI Estimate Failure — Cloudflare Tunnel Setup 04-02-2026.md](ai-chat-history/Microsoft/AI%20Estimate%20Failure%20%E2%80%94%20Cloudflare%20Tunnel%20Setup%2004-02-2026.md)  
+- [Cloudflare UI Mismatch 04-02-2026.html](ai-chat-history/Microsoft/Cloudflare%20UI%20Mismatch%2004-02-2026.html)  
+
+[2026-04-02 17:06 🛑] **Drift Instance:** Microsoft Copilot — Cloudflare Zero Trust UI Assumption Drift  
+**Category:** UI Assumption Drift / Context Misalignment  
+**Source:** ai-chat-history/Microsoft/AI Drift Incident — Cloudflare UI Mismatch 04-02-2026.md  
+**Model:** GPT-4.1 (Microsoft Copilot)  
+**Caught by:** User  
+**Status:** Incident acknowledged and documented  
+**Impact:**  
+- Progress on Vaultwarden + Cloudflare Tunnel configuration was blocked by invalid pathing guidance  
+- Repeated correction loops increased friction and troubleshooting time  
+- User trust degraded due to failure to adapt to current UI evidence  
+**Root Cause:**  
+- Assistant persisted with legacy Cloudflare navigation assumptions  
+- Did not pivot quickly after user-reported mismatch and screenshot contradiction  
+**Correction:**  
+- Stop repeating disproven steps once contradicted  
+- Treat user screenshots as authoritative and rebuild guidance from visible UI state  
+**Evidence:**  
+- [AI Drift Incident — Cloudflare UI Mismatch 04-02-2026.md](ai-chat-history/Microsoft/AI%20Drift%20Incident%20%E2%80%94%20Cloudflare%20UI%20Mismatch%2004-02-2026.md)  
+- [Cloudflare UI Mismatch 04-02-2026.html](ai-chat-history/Microsoft/Cloudflare%20UI%20Mismatch%2004-02-2026.html)  
+
 [2026-03-24 23:51 🛑] **Drift Instance:** Microsoft Copilot — Robocopy Script Output & Unvalidated Code Block  
 **Category:** Script Validation Drift / Output Safety  
 **Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md  

@@ -34,6 +34,52 @@ During Seedbox Syncthing troubleshooting, the assistant kept following the wrong
 - Enforce fact-first validation of service state, access path, and backend health
 **Status:** Logged and cross-linked for governance review.
 
+# 🛑 **Drift Instance:** Microsoft Copilot — Cloudflare Tunnel Estimate Drift After UI Mismatch
+🕒 **Date:** 2026-04-02 18:22
+⚠️ **Category:** Estimate Drift / Execution-Time Miscalculation
+⚠️ **Source:** ai-chat-history/Microsoft/AI Estimate Failure — Cloudflare Tunnel Setup 04-02-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+**Caught by:** User
+**Status:** Incident acknowledged and documented
+📝 **Drift Description:**
+The assistant provided an approximately 30-minute completion estimate for Cloudflare Tunnel plus Vaultwarden routing work, but the workflow exceeded 3 hours after repeated navigation guidance failed against the live Cloudflare interface.
+**Root Cause:**
+- Estimate was anchored to legacy UI assumptions instead of verified live interface state
+- ETA was not recalibrated after user screenshots and repeated contradiction of the guidance path
+**Impact:**
+- 3+ hours of productivity loss versus original estimate
+- Increased user cognitive load from repeated invalid step cycles
+- Delayed completion of Vaultwarden + Cloudflare Tunnel setup
+**Correction Applied:**
+- Recompute ETA immediately when a core navigation assumption fails
+- Tie execution estimates to validated UI state before making time commitments
+**Evidence:**
+- ai-chat-history/Microsoft/AI Estimate Failure — Cloudflare Tunnel Setup 04-02-2026.md
+- ai-chat-history/Microsoft/Cloudflare UI Mismatch 04-02-2026.html
+
+# 🛑 **Drift Instance:** Microsoft Copilot — Cloudflare Zero Trust UI Assumption Drift
+🕒 **Date:** 2026-04-02 17:06
+⚠️ **Category:** UI Assumption Drift / Context Misalignment
+⚠️ **Source:** ai-chat-history/Microsoft/AI Drift Incident — Cloudflare UI Mismatch 04-02-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+**Caught by:** User
+**Status:** Incident acknowledged and documented
+📝 **Drift Description:**
+The assistant repeatedly provided navigation steps based on legacy Cloudflare Zero Trust structure after the user reported the steps did not match the actual interface and provided contradictory evidence.
+**Root Cause:**
+- Assistant persisted with historical UI patterns instead of live, user-reported state
+- Failed to pivot quickly when screenshots contradicted expected menus and path names
+**Impact:**
+- Blocked progress on Vaultwarden + Cloudflare Tunnel configuration
+- Added repeated troubleshooting loops and workflow friction
+- Reduced trust in assistant adaptability during live UI troubleshooting
+**Correction Applied:**
+- Stop repeating disproven navigation instructions once contradicted
+- Treat user screenshots as authoritative and rebuild guidance from visible UI state
+**Evidence:**
+- ai-chat-history/Microsoft/AI Drift Incident — Cloudflare UI Mismatch 04-02-2026.md
+- ai-chat-history/Microsoft/Cloudflare UI Mismatch 04-02-2026.html
+
 # 🛑 **Drift Instance:** DeepSeek — False DNS Verification & Premature Success Declaration
 🕒 **Date:** 2026-03-30 04:00
 ⚠️ **Source:** ai-chat-history/Deepseek/Domain Deleted Help Needed 03-30-2026.md

@@ -1,47 +1,12 @@
 {
-  "folders": [
-    {
-      "name": "AI Collaboration Governance",
-      "path": "."
-    },
-    {
-      "path": "../NAS-backup-2nd-rebuild"
-    }
-  ],
-  "settings": {
-    "window.title": "AI Collaboration Governance"
-  },
-  "tasks": {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Open Handoff",
-        "type": "shell",
-        "command": "code handoff/AI-Collaboration-Handoff.md",
-        "runOptions": { "runOn": "folderOpen" },
-        "presentation": { "reveal": "never" }
-      },
-      {
-        "label": "Open TODO",
-        "type": "shell",
-        "command": "code TODO.md",
-        "runOptions": { "runOn": "folderOpen" },
-        "presentation": { "reveal": "never" }
-      },
-      {
-        "label": "Open Project Summary",
-        "type": "shell",
-        "command": "code project-summary/PROJECT_SUMMARY.md",
-        "runOptions": { "runOn": "folderOpen" },
-        "presentation": { "reveal": "never" }
-      },
-      {
-        "label": "Open Project Requirements",
-        "type": "shell",
-        "command": "code project-requirements.md",
-        "runOptions": { "runOn": "folderOpen" },
-        "presentation": { "reveal": "never" }
-      }
-    ]
-  }
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"git remote": true
+		}
+	}
 }
