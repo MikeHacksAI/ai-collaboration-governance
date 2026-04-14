@@ -8,8 +8,48 @@
 - 🗂️ **Merge Drift:** Missed consolidation or incomplete merge
 - 🧩 **Format Drift:** Entry not matching required format
 - 🛑 **Critical Drift:** Severe error or compliance failure
-### Changelog
 ## [Drift Log Entries Begin Below — Newest First]
+---
+# **Drift Instance:** Microsoft Copilot — Placement Drift: Audit Header Violation
+**Date:** 2026-04-13 17:15
+**Category:** Placement Drift / Audit Header Violation
+**Source:** Automated drift log update (Ollama & TalentLMS/Moodle entries)
+**Model:** GPT-4.1 (Microsoft Copilot)
+**Caught by:** User
+**Status:** Incident acknowledged, placement corrected, and audit rules reaffirmed
+**Impact:**
+- Drift entries were inserted before the audit/guidance section, violating placement requirements
+- Risked audit confusion and compliance failure
+**Root Cause:**
+- Assistant failed to place new drift entries after the audit/guidance section and before the drift log marker
+**Correction:**
+- Placement corrected; all future entries will be inserted after audit/guidance and before drift log marker
+**Evidence:**
+- See previous file versions and user feedback for details
+...
+
+- [2026-04-13 17:00 🛑] **Drift Instance:** Microsoft Copilot — Container Path Violations & Governance Breach (TalentLMS/Moodle)
+**Category:** Critical Governance Violation / Canonical Path Enforcement
+**Source:** ai-chat-history/Microsoft/Integrating TalentLMS with Moodle on Raspberry Pi 5_04-13-2026.html
+**Model:** GPT-4.1 (Microsoft Copilot)
+**Caught by:** User
+**Status:** Incident documented, architecture reset, and governance rules reaffirmed
+**Impact:**
+- Misplaced container data on Pi and seedbox
+- Two NAS rebuilds required
+- Months-long OpenDrive mount issues unaddressed
+- User forced to restate requirements repeatedly
+- Data loss risk, wasted time, and eroded trust
+**Root Cause:**
+- Assistant ignored explicit canonical paths for both Pi (/mnt/2tb/docker-containers/<containername>) and seedbox (/mnt/cloudmounts/opendrive/DockerContainers/<containername>)
+- Repeatedly generated and recommended non-canonical paths
+- Failed to respect user-stated storage constraints and governance rules
+**Correction:**
+- All future container data and configs must use only the user-approved canonical paths
+- Governance rules reaffirmed and architecture reset
+**Evidence:**
+- See ai-chat-history/Microsoft/Integrating TalentLMS with Moodle on Raspberry Pi 5_04-13-2026.html for full incident and user feedback
+
 [2026-04-07 01:46 🛑] **Drift Instance:** Microsoft Copilot — Seedbox Syncthing Service Governance Drift  
 **Category:** Wrong Root-Cause Path / Incorrect Branch Selection  
 **Source:** drift-log/Seedbox Syncthing Service Governance Drift Record 04-07-2026.md  
@@ -121,9 +161,47 @@ The assistant repeatedly directed the user to Cloudflare UI sections and setting
 **Model:** GPT-4.1 (Microsoft Copilot)
 📝 **Drift Description:**
 The assistant delivered a Robocopy script containing a non‑commented line (`/L = DRY RUN...`) that executed as literal PowerShell code, causing PowerShell to interpret `remove` as a command and produce an error. The assistant did not validate the malformed line before providing the script and incorrectly framed the issue as user error instead of acknowledging responsibility.
-**Status:** Acknowledged and corrected
+**Root Cause:**
+- Failed to validate code block syntax before delivery.
+- Did not detect a missing `#` that converted a comment into executable code.
+- Did not apply governance rules requiring correctness, safety, and reproducibility.
+**Impact:**
+- Script execution produced misleading behavior and errors.
+- Robocopy ran with incorrect flags and invalid state.
+- User time lost due to debugging a preventable formatting error.
+- Trust and governance expectations temporarily degraded.
+**Correction Applied:**
+- All script blocks must be validated for syntactic correctness before output.
+- Any code-like line without a comment marker is treated as executable.
+- Responsibility for assistant-generated errors is not attributed to the user.
+- Governance-grade rigor is applied to all technical artifacts.
+**Status:** Acknowledged and corrected.
 
-[2026-03-24 14:29] **Audit Trail Entry — Syncthing Guidance Drift**
+---
+# **Audit Trail Entry — Robocopy Script Output & Unvalidated Code Block**
+🕒 **Date:** 2026-03-24 23:51
+⚠️ **Source:** ai-chat-history/Incorrect script output + unvalidated code block_AI-drift-admittance-03-24-2026.md
+**Model:** GPT-4.1 (Microsoft Copilot)
+📝 **Drift Description:**
+The assistant delivered a Robocopy script containing a non‑commented line (`/L = DRY RUN...`) that executed as literal PowerShell code, causing PowerShell to interpret `remove` as a command and produce an error. The assistant did not validate the malformed line before providing the script and incorrectly framed the issue as user error instead of acknowledging responsibility.
+**Root Cause:**
+- Failed to validate code block syntax before delivery.
+- Did not detect a missing `#` that converted a comment into executable code.
+- Did not apply governance rules requiring correctness, safety, and reproducibility.
+**Impact:**
+- Script execution produced misleading behavior and errors.
+- Robocopy ran with incorrect flags and invalid state.
+- User time lost due to debugging a preventable formatting error.
+- Trust and governance expectations temporarily degraded.
+**Correction Applied:**
+- All script blocks must be validated for syntactic correctness before output.
+- Any code-like line without a comment marker is treated as executable.
+- Responsibility for assistant-generated errors is not attributed to the user.
+- Governance-grade rigor is applied to all technical artifacts.
+**Status:** Acknowledged and corrected.
+
+---
+# **Audit Trail Entry — Syncthing Guidance Drift**
 🕒 **Date:** 2026-03-24 14:29
 ⚠️ **Source:** ai-chat-history/Microsoft/Syncthing Setup on RapidSeedbox - AI Drift Admittance - 03-24-2026.md
 **Model:** GPT-4.1 (Microsoft Copilot)
@@ -579,21 +657,6 @@ Correction: All future guidance must clearly distinguish between official docume
 [2026-03-11 14:55] AI drift: Explicit user instructions to log drift in drift-log.md were not followed immediately. User clarified that all drift logs must be recorded in both handoff/AI-Collaboration-Handoff.md and drift-log.md. Action: Documented drift and corrected logging behavior. (Source: C:\repos\projects\youtube-downloader\drift-log.md)
 [2026-03-11 15:10] AI drift: Assumed container deployment was for Windows Docker Desktop/WSL, but project-summary/tube-archivist-setup.md clearly specifies setup for Raspberry Pi 5. User clarified the target environment. Action: Documented drift and corrected deployment instructions to focus on Pi 5. (Source: C:\repos\projects\youtube-downloader\drift-log.md)
 [2026-03-11 15:20] AI drift: Compliance drift detected — TODO.md was empty and not updated with the completed todo list until prompted by user. Action: Documented drift, updated TODO.md, and corrected compliance behavior for future sessions. (Source: youtube-downloader/TODO.md) (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-[2026-03-11 15:31] AI drift: Timestamp generalization error — drift log entries were initially recorded with 15:00 instead of the actual time. User flagged the issue and required precise timestamp for traceability. Correction: Entries updated to 15:31. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
-[2026-03-11 15:20] AI drift: Incorrectly stated that /home/mike does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
-[2026-03-11 15:20] AI drift: Incorrectly stated that /mnt/cloudmounts does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
-[2026-03-11 00:36] AI drift: Retro update corrections: handoff.md Section 11 was missing and added. (Source: C:\repos\projects\NAS-backup-2nd-rebuild\drift-log.md)
-[2026-03-11 14:55] AI drift: Explicit user instructions to log drift in drift-log.md were not followed immediately. User clarified that all drift logs must be recorded in both handoff.md and drift-log.md. Action: Documented drift and corrected logging behavior. (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-[2026-03-11 15:10] AI drift: Assumed container deployment was for Windows Docker Desktop/WSL, but project-summary/tube-archivist-setup.md clearly specifies setup for Raspberry Pi 5. User clarified the target environment. Action: Documented drift and corrected deployment instructions to focus on Pi 5. (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-[2026-03-11 15:20] AI drift: Compliance drift detected — TODO.md was empty and not updated with the completed todo list until prompted by user. Action: Documented drift, updated TODO.md, and corrected compliance behavior for future sessions. (Source: youtube-downloader/TODO.md) (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-[2026-03-11 15:31] AI drift: Timestamp generalization error — drift log entries were initially recorded with 15:00 instead of the actual time. User flagged the issue and required precise timestamp for traceability. Correction: Entries updated to 15:31. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
-[2026-03-11 15:20] AI drift: Incorrectly stated that /home/mike does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
-[2026-03-11 15:20] AI drift: Incorrectly stated that /mnt/cloudmounts does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
-[2026-03-11 00:36] AI drift: Retro update corrections: handoff.md Section 11 was missing and added. (Source: C:\repos\projects\NAS-backup-2nd-rebuild\drift-log.md)
-[2026-03-11 14:55] AI drift: Explicit user instructions to log drift in drift-log.md were not followed immediately. User clarified that all drift logs must be recorded in both handoff.md and drift-log.md. Action: Documented drift and corrected logging behavior. (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-[2026-03-11 15:10] AI drift: Assumed container deployment was for Windows Docker Desktop/WSL, but project-summary/tube-archivist-setup.md clearly specifies setup for Raspberry Pi 5. User clarified the target environment. Action: Documented drift and corrected deployment instructions to focus on Pi 5. (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-[2026-03-11 15:20] AI drift: Compliance drift detected — TODO.md was empty and not updated with the completed todo list until prompted by user. Action: Documented drift, updated TODO.md, and corrected compliance behavior for future sessions. (Source: youtube-downloader/TODO.md) (Source: C:\repos\projects\youtube-downloader\drift-log.md)
-> ⚠️ [2026-03-12 20:50] AI drift: Contradicted instructions about rclone password format. First advised using plain password in config, then clarified rclone expects obscured/encrypted password generated by rclone config. User confusion resulted. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
 [2026-03-11 15:31] AI drift: Timestamp generalization error — drift log entries were initially recorded with 15:00 instead of the actual time. User flagged the issue and required precise timestamp for traceability. Correction: Entries updated to 15:31. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
 [2026-03-11 15:20] AI drift: Incorrectly stated that /home/mike does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
 [2026-03-11 15:20] AI drift: Incorrectly stated that /mnt/cloudmounts does not exist on the seedbox, despite user evidence. Canonical path exists per screenshot. (Source: C:\repos\projects\cloud-mounts-project\drift-log.md)
